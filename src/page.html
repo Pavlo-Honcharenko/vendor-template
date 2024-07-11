@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('html/_head.htm',{
+	"title":"Page"
+	})
+	<body>
+		<div class="wrapper">
+			@@include('html/_header.htm',{})
+			<main class="page">
+				
+				<!-- THE CONTENT OF THE PAGE, start -->
+				<div class="main-wrapper">
+					<div class="col-contact">
+						<div class="contact-form">
+							<div class="contact-form__title">
+								CONTACT %VENDORNAME%
+							</div>
+
+							<div class="contact-form__description">
+								Don’t have wedding details yet? Our vendors are happy
+								to hear from you at any stage in your planning process.
+								Just share what you know so far!
+							</div>
+
+							<form name="form-vendor" class="form-vendor" action="#" method="post">
+
+								<div class="contact-form__item">
+									<input autocomplete="off" type="text" name="form[name]" data-validate data-error="This field is required." placeholder="Couple’s Name*" class="input">
+								</div>
+								
+
+								<div class="contact-form__item">
+									<input type="text" name="form[email]" data-validate data-error="This field is required. Please enter a valid email address." data-required="email" placeholder="Email*" class="input">
+								</div>
+
+								<div class="contact-form__item">
+									<input autocomplete="off" type="text" name="form[phone]" placeholder="Phone" class="input">
+								</div>
+
+								<div class="contact-form__item">
+									<input type="date" name="form[date]" placeholder="Wedding Date" class="input wedding-date">
+								</div>
+
+								<div class="contact-form__item">
+									<input type="text" name="form[location]" placeholder="Wedding Location" class="input">
+								</div>
+
+								<div class="contact-form__item">
+									<textarea name="form[text]" cols="30" rows="10" placeholder="Tell us more details (your vision, your style or questions you may have for this vendor)"></textarea>
+								</div>
+
+								<div class="contact-form__item">
+									<div class="contact-form__slogan">
+										Make contacting more vendors easy
+									</div>
+								</div>
+
+								<div class="contact-form__item">
+									<div class="checkbox">
+										<input id="c_1" class="checkbox__input" type="checkbox" value="1" name="form[checkbox]">
+										<label for="c_1" class="checkbox__label"><span class="checkbox__text">Contacting more vendors is easy. Check this box to use this info on future Junebug vendor forms.</span></label>
+									</div>
+								</div>
+
+								<button type="submit" class="button">
+									Contact Vendor
+								</button>
+							</form>
+
+							
+						</div>
+					</div>
+					<div class="col-content">
+
+						<!-- SECTION Main -->
+						<section class="main">
+							<div class="main__container">
+								
+								<!-- Breadcrumbs, start -->
+								<div class="breadcrumbs">
+									<div class="breadcrumbs__item">
+										<a href="#">Premium Vendors</a>
+									</div>
+									<div class="breadcrumbs__item">
+										<a href="#">Netherlands</a>
+									</div>
+									<div class="breadcrumbs__item">
+										<a href="#">Wedding Photographers</a>
+									</div>
+									<div class="breadcrumbs__item">
+										Roy van der Wens Photo & Video
+									</div>
+								</div>
+								<!-- Breadcrumbs, end -->
+
+								<div class="main__row">
+									<div class="main__col main__col--slider">
+
+										<!-- Slider Swiper, start -->
+										<div class="main__slider swiper">
+											<!-- The moving part of the slider -->
+											<div class="main__wrapper swiper-wrapper">
+												<!-- Slide -->
+												<div class="main__slide swiper-slide">
+													<img src="@img/memorybox38.jpeg" alt="photo">
+												</div>
+												<!-- Slide -->
+												<div class="main__slide swiper-slide">
+													<img src="@img/memorybox39.jpeg" alt="photo">
+												</div>
+												<!-- Slide -->
+												<div class="main__slide swiper-slide">
+													<img src="@img/memorybox40.jpeg" alt="photo">
+												</div>
+											</div>
+											<!-- If you need pagination -->
+											<div class="swiper-pagination"></div>
+											<!-- If you need a scrollbar -->
+											<div class="swiper-scrollbar"></div>
+										</div>
+										<!-- Slider Swiper, end -->
+
+									</div>
+									<div class="main__col main__col--content">
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ipsum ad porro voluptates est. Iste eius tempore eum possimus neque ex placeat sed, assumenda animi voluptatem ullam mollitia dolores magni!
+									</div>
+								</div>
+
+							</div>
+						</section>
+						<!-- End of SECTION Main -->
+
+					</div>
+				</div>
+				<!-- THE CONTENT OF THE PAGE, end-->
+
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_js.htm',{})
+	</body>
+</html>
