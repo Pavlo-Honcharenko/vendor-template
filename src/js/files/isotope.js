@@ -15,7 +15,7 @@ if (items) {
 		itemSelector: '[data-iso-item]',
 		masonry: {
 			fitWidth: true,
-			gutter: 20
+			gutter: 0
 		}
 	});
 }
