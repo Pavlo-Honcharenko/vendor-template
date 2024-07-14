@@ -28,6 +28,10 @@
 	&::-webkit-details-marker {
 		display: none;
 	}
+
+	@media (max-width:$mobile){
+		padding: toRem(7) toRem(42) toRem(7) toRem(15);
+	}
 	._spoller-init & {
 		cursor: pointer;
 		&::before,
@@ -38,7 +42,7 @@
 			top: 50%;
 			background-color: #000;
 			height: 2px;
-			width: 15px;
+			width: 12px;
 			transition: transform 0.5s ease 0s;
 		}
 		&::before {
@@ -69,4 +73,8 @@
 	font-size: 13px;
 	line-height: 180%;
 	color: #7C7C7C;
+
+	@media (max-width:$mobile){
+		padding: toRem(15) toRem(15);
+	}
 }

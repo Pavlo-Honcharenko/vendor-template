@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html id="vendor-html" lang="en">
 	@@include('html/_head.htm',{
 	"title":"Page"
 	})
-	<body>
+	<body id="vendor-body">
 		<div class="wrapper">
 			@@include('html/_header.htm',{})
-			<main class="page">
+			<main id="vendor-portfolio" class="page">
 				
 				<!-- THE CONTENT OF THE PAGE, start -->
 				<div class="main-wrapper">
@@ -15,7 +15,7 @@
 					<div class="col-contact">
 						<div class="contact-form">
 							<div class="contact-form__title">
-								CONTACT %VENDORNAME%
+								CONTACT MemoryBox
 							</div>
 
 							<div class="contact-form__description">
@@ -134,43 +134,6 @@
 										</div>
 										<!-- Slider Swiper, end -->
 
-										<div class="social-icons">
-											<div class="icon">
-												<a href="">
-													i
-												</a>
-											</div>
-											<div class="icon">
-												<a href="">
-													i
-												</a>
-											</div>
-											<div class="icon">
-												<a href="">
-													i
-												</a>
-											</div>
-											<div class="icon">
-												<a href="">
-													i
-												</a>
-											</div>
-											<div class="icon">
-												<a href="">
-													i
-												</a>
-											</div>
-											<div class="icon">
-												<a href="">
-													i
-												</a>
-											</div>
-										</div>
-
-										<div class="social-icons-text">
-											Insta/Fb/Tiktok/Pinterest/Vimeo/Youtube
-										</div>
-
 									</div>
 									<!-- Main Section, Column with Slider, end -->
 
@@ -198,6 +161,47 @@
 										
 									</div>
 									<!-- Main Section Content, end -->
+
+								</div><!-- END of main__row -->
+
+								<div class="main__row">
+									<div class="main__col">
+										<div class="social-icons">
+											<div class="icon">
+												<a href="">
+													<i class="fab fa-instagram" aria-hidden="true"></i>
+												</a>
+											</div>
+											<div class="icon">
+												<a href="">
+													<i class="fab fa-facebook" aria-hidden="true"></i>
+												</a>
+											</div>
+											<div class="icon">
+												<a href="">
+													<i class="fab fa-tiktok" aria-hidden="true"></i>
+												</a>
+											</div>
+											<div class="icon">
+												<a href="">
+													<i class="fab fa-pinterest" aria-hidden="true"></i>
+												</a>
+											</div>
+											<div class="icon">
+												<a href="">
+													<i class="fab fa-vimeo" aria-hidden="true"></i>
+												</a>
+											</div>
+											<div class="icon">
+												<a href="">
+													<i class="fab fa-youtube" aria-hidden="true"></i>
+												</a>
+											</div>
+										</div>
+
+									</div>
+									<div class="main__col">
+									</div>
 								</div>
 
 							</div>
@@ -233,47 +237,34 @@
 									Get a feel of what your big day can look like with the help of this Vendor.
 								</div>
 
+
 								<!-- Gallery Images, start -->
-								<div data-iso-items class="gallery-images bg-gradient">
-									<div data-iso-item class="gallery-image">
+								<div data-iso-items data-gallery class="gallery-images bg-gradient">
+									<a href="@img/memorybox24.jpeg" data-iso-item class="gallery-image">
 										<img src="@img/memorybox24.jpeg" alt="">
-									</div>
-									<div data-iso-item class="gallery-image">
+									</a>
+									<a href="@img/memorybox27.jpeg" data-iso-item class="gallery-image">
 										<img src="@img/memorybox27.jpeg" alt="">
-									</div>
-									<div data-iso-item class="gallery-image">
+									</a>
+									<a href="@img/memorybox28.jpeg" data-iso-item class="gallery-image">
 										<img src="@img/memorybox28.jpeg" alt="">
-									</div>
-									<div data-iso-item class="gallery-image">
+									</a>
+									<a href="@img/memorybox32.jpeg" data-iso-item class="gallery-image">
 										<img src="@img/memorybox32.jpeg" alt="">
-									</div>
-									<div data-iso-item class="gallery-image">
+									</a>
+									<a href="@img/memorybox33.jpeg" data-iso-item class="gallery-image">
 										<img src="@img/memorybox33.jpeg" alt="">
-									</div>
-									<div data-iso-item class="gallery-image">
+									</a>
+									<a href="@img/memorybox34.jpeg" data-iso-item class="gallery-image">
 										<img src="@img/memorybox34.jpeg" alt="">
-									</div>
-									<div data-iso-item class="gallery-image">
-										<img src="@img/memorybox35.jpeg" alt="">
-									</div>
-									<div data-iso-item class="gallery-image">
-										<img src="@img/memorybox36.jpeg" alt="">
-									</div>
-									<div data-iso-item class="gallery-image">
-										<img src="@img/memorybox37.jpeg" alt="">
-									</div>
-									<div data-iso-item class="gallery-image">
-										<img src="@img/memorybox38.jpeg" alt="">
-									</div>
-									<div data-iso-item class="gallery-image">
-										<img src="@img/memorybox39.jpeg" alt="">
-									</div>
-									<div data-iso-item class="gallery-image">
-										<img src="@img/memorybox40.jpeg" alt="">
-									</div>
+									</a>
+									<a href="@img/memorybox26.jpeg" data-iso-item class="gallery-image">
+										<img src="@img/memorybox26.jpeg" alt="">
+									</a>
 								</div>
 								<!-- Gallery Images, end -->
 
+								<!-- <div id="load-gallery" class="load-more">Load more ></div> -->
 								<div id="more-gallery" class="load-more">Load more ></div>
 
 							</div>
@@ -402,6 +393,7 @@
 								<div class="features__description">
 									Check out the memorable Junebug Features of this vendor.
 								</div>
+
 								<div class="features-items">
 									<div class="features-item">
 										<div class="features-item__image">
@@ -426,31 +418,8 @@
 											Read full article
 										</a>
 									</div>
-
-									<div class="features-item">
-										<div class="features-item__image">
-											<img src="@img/memorybox31.jpeg" alt="image">
-										</div>
-										<div class="features-item__text">
-											Unique tropical spots for memorable wedding photos
-										</div>
-										<a href="" class="features-item__button">
-											Read full article
-										</a>
-									</div>
-
-									<div class="features-item">
-										<div class="features-item__image">
-											<img src="@img/memorybox31.jpeg" alt="image">
-										</div>
-										<div class="features-item__text">
-											Unique tropical spots for memorable wedding photos
-										</div>
-										<a href="" class="features-item__button">
-											Read full article
-										</a>
-									</div>
 								</div>
+
 							</div>
 						</section>
 						<!-- End of SECTION FEATURES -->
@@ -481,11 +450,6 @@
 											<img src="@img/best.jpg" alt="">
 										</div>
 									</div>
-									<div class="awards-item">
-										<div class="awards-image">
-											<img src="@img/best.jpg" alt="">
-										</div>
-									</div>
 								</div>
 							</div>
 						</section>
@@ -498,9 +462,192 @@
 								<div class="reviews__title title-orange">
 									Reviews
 								</div>
+
 								<div class="reviews__description">
 									This Vendor has an impressive history with Junebug - check it out!
 								</div>
+								
+								<div class="reviews-list bg-gradient">
+
+									<!-- REVIEW, start -->
+									<div class="review">
+										<div class="review__title">
+											Alicia and John
+										</div>
+
+										<div class="review__tags">
+											<div class="review__tag">COUPLE</div>
+											<div class="review__tag">VERIFIED HIRE</div>
+										</div>
+
+										<div data-rating="" data-rating-value="4" class="rating">
+										</div>
+
+										<div class="review__text">
+											<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat... </p>
+										</div>
+										<div data-showmore class="review-more">
+											<div data-showmore-content="1" class="review-more__content">
+												Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut possimus inventore veritatis non voluptate officiis harum ex deleniti ratione suscipit. Veniam reiciendis reprehenderit, aut cumque laborum maiores porro consequatur natus!
+											</div>
+											<button hidden data-showmore-button type="button" class="review-more__more">
+												<span>Read more ></span>
+												<span>Hide</span>
+											</button>
+										</div>
+
+										<div class="vendors-response">
+											<div class="vendors-response__title">
+												Vendor’s Response
+											</div>
+											<div class="vendors-response__text">
+												Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat... 
+											</div>
+										</div>
+
+
+									</div>
+									<!-- REVIEW, end -->
+
+									<!-- REVIEW, start -->
+									<div class="review">
+										<div class="review__title">
+											Olivia Smith
+										</div>
+
+										<div class="review__tags">
+											<div class="review__tag">COUPLE</div>
+											<div class="review__tag">VERIFIED HIRE</div>
+										</div>
+
+										<div data-rating="" data-rating-value="4" class="rating">
+										</div>
+
+										<div class="review__text">
+											<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat... </p>
+										</div>
+										<div data-showmore class="review-more">
+											<div data-showmore-content="1" class="review-more__content">
+												<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut possimus inventore veritatis non voluptate officiis harum ex deleniti ratione suscipit. Veniam reiciendis reprehenderit, aut cumque laborum maiores porro consequatur natus!</p>
+											</div>
+											<button hidden data-showmore-button type="button" class="review-more__more">
+												<span>Read more ></span>
+												<span>Hide</span>
+											</button>
+										</div>
+
+										<div class="reviews-photos">
+											<div class="reviews-photo">
+												<img src="@img/photo.jpg" alt="">
+											</div>
+											<div class="reviews-photo">
+												<img src="@img/photo.jpg" alt="">
+											</div>
+										</div>
+
+
+									</div>
+									<!-- REVIEW, end -->
+
+									<!-- REVIEW, start -->
+									<div class="review">
+										<div class="review__title">
+											Olivia Smith
+										</div>
+
+										<div class="review__tags">
+											<div class="review__tag">COUPLE</div>
+											<div class="review__tag">VERIFIED HIRE</div>
+										</div>
+
+										<div data-rating="" data-rating-value="3" class="rating">
+										</div>
+
+										<div class="review__text">
+											<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat... </p>
+										</div>
+										<div data-showmore class="review-more">
+											<div data-showmore-content="1" class="review-more__content">
+												<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut possimus inventore veritatis non voluptate officiis harum ex deleniti ratione suscipit. Veniam reiciendis reprehenderit, aut cumque laborum maiores porro consequatur natus!</p>
+											</div>
+											<button hidden data-showmore-button type="button" class="review-more__more">
+												<span>Read more ></span>
+												<span>Hide</span>
+											</button>
+										</div>
+
+										<div class="reviews-photos">
+											<div class="reviews-photo">
+												<img src="@img/photo.jpg" alt="">
+											</div>
+										</div>
+
+
+									</div>
+									<!-- REVIEW, end -->
+
+									<!-- REVIEW, start -->
+									<div class="review">
+										<div class="review__title">
+											Alicia and John
+										</div>
+
+										<div class="review__tags">
+											<div class="review__tag">COUPLE</div>
+											<div class="review__tag">VERIFIED HIRE</div>
+										</div>
+
+										<div data-rating="" data-rating-value="5" class="rating">
+										</div>
+
+										<div class="review__text">
+											<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+										</div>
+										<div data-showmore class="review-more">
+											<div data-showmore-content="1" class="review-more__content">
+												<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut possimus inventore veritatis non voluptate officiis harum ex deleniti ratione suscipit. Veniam reiciendis reprehenderit, aut cumque laborum maiores porro consequatur natus!</p>
+												<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut possimus inventore veritatis non voluptate officiis harum ex deleniti ratione suscipit. Veniam reiciendis reprehenderit, aut cumque laborum maiores porro consequatur natus!</p>
+											</div>
+											<button hidden data-showmore-button type="button" class="review-more__more">
+												<span>Read more ></span>
+												<span>Hide</span>
+											</button>
+										</div>
+
+										<div class="vendors-response">
+											<div class="vendors-response__title">
+												Vendor’s Response
+											</div>
+											<div class="vendors-response__text">
+												<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat... </p>
+											</div>
+										</div>
+
+
+									</div>
+									<!-- REVIEW, end -->
+
+								</div>
+
+								<a href="" class="see-more-reviews">See more reviews ></a>
+
+								<div class="leave-review">
+									<div class="leave-review__title">
+										Leave review
+									</div>
+
+									<form name="leave-review" action="" method="post">
+										<div class="form-line">
+											<div class="leave-review__text">Rating</div>
+											<div data-rating="set" class="rating"></div>
+										</div>
+										
+										<button type="submit" class="button">Submit review</button>
+									</form>
+
+									
+								</div>
+
 								
 								
 							</div>

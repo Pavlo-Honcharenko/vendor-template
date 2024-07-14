@@ -5,4 +5,200 @@
 	font-style: italic;
 	font-size: 46px;
 	color: #C99A0C;
+
+	@media (max-width:$mobile){
+		font-size: 40px;
+		margin-bottom: 30px;
+	}
+}
+
+
+//=======================================================================================================
+.lg-content {
+	top: 0 !important;
+}
+.lg-backdrop {
+	background-color: rgba(255, 255, 255, 0.92) !important;
+
+	@media (min-width:$mobile){
+		left: 300px !important;
+	}
+	@media (min-width: 1600px){
+		left: 350px !important;
+	}
+
+	@media (min-width: 1800px){
+		left: 19.4vw !important;
+	}
+	
+}
+.lg-outer {
+
+	@media (min-width:$mobile){
+		width: calc(100% - 300px) !important;
+		left: 300px !important;
+	}
+	@media (min-width: 1600px){
+		width: calc(100% - 350px) !important;
+		left: 350px !important;
+	}
+
+	@media (min-width: 1800px){
+		width: 80.6vw !important;
+		left: 19.4vw !important;
+	}
+   
+}
+.lg-outer .lg-object {
+	max-width: calc(100% - 100px) !important;
+	max-height: calc(100% - 200px) !important;
+	margin-top: -50px !important;
+
+	@media (max-width:$pc){
+		
+	}
+
+	@media (max-width:$tablet){
+		max-width: calc(100% - 30px) !important;
+	}
+
+	@media (max-width: 600px){
+		max-width: 100% !important;
+	}
+}
+
+.lg-next, .lg-prev {
+	font-family: "Josefin Sans" !important;
+	background-color: rgba(0, 0, 0, 0) !important;
+	color: #000 !important;
+	position: absolute;
+	top: calc(100% - 65px) !important;
+}
+.lg-prev {
+	left: calc(50% - 205px) !important;
+
+	@media (max-width: 400px){
+		left: calc(50% - 166px) !important;
+	}
+}
+.lg-next {
+	right: calc(50% - 205px) !important;
+
+	@media (max-width: 400px){
+		right: calc(50% - 166px) !important;
+	}
+}
+
+.lg-prev:after {
+	content: "" !important;
+	font-family: "Josefin Sans" !important;
+	color: rgb(0, 0, 0) !important;
+	display: block !important;
+	width: 11px !important;
+	height: 19px !important;
+	background: url('@img/icons/slide-prev.svg') center center / 100% 100% no-repeat !important;
+}
+.lg-prev:before {
+	content: "Previous" !important;
+	font-family: "Josefin Sans" !important;
+	color: rgb(0, 0, 0) !important; 
+	font-size: 22px !important;
+	position: absolute  !important;
+	display: block !important;
+	left: 30px !important;
+	top: 0 !important;
+	padding: 9px !important;
+
+	@media (max-width: 400px){
+		font-size: 18px !important;
+		top: 2px !important;
+	}
+}
+.lg-next:before {
+	content: "" !important;
+	font-family: "Josefin Sans" !important;
+	color: rgb(0, 0, 0) !important; 
+	display: block !important;
+	width: 11px !important;
+	height: 19px !important;
+	background: url('@img/icons/slide-next.svg') center center / 100% 100% no-repeat !important;
+}
+.lg-next:after {
+	content: "Next" !important;
+	font-family: "Josefin Sans" !important;
+	color: rgb(0, 0, 0) !important; 
+	font-size: 22px !important;
+	position: absolute  !important;
+	display: block !important;
+	right: 30px !important;
+	top: 0 !important;
+	padding: 9px !important;
+
+	@media (max-width: 400px){
+		font-size: 18px !important;
+		top: 2px !important;
+	}
+}
+.lg-next:hover:not(.disabled), .lg-prev:hover:not(.disabled) {
+	color: rgb(0, 0, 0) !important;
+	transform: scale(1.05) !important;
+}
+.lg-toolbar {
+	position: absolute !important;
+	top: initial !important;
+	bottom: calc(0% + 40px);
+	width: 60px !important;
+	height: 35px !important;
+	background: rgba(204, 204, 204, 0) !important;
+	display: flex !important;
+	justify-content: center !important;
+	align-items: center !important;
+	left: calc(50% - 14px) !important;
+
+	@media (max-width: 400px){
+		left: calc(50% - 17px) !important;
+	}
+
+	@media (any-hover: hover) {
+		&:hover {
+			color: rgb(0, 0, 0) !important;
+			transform: scale(1.05) !important;
+		}
+	}
+}
+.lg-download, .lg-counter {
+	display: none !important;
+}
+.lg-toolbar .lg-icon {
+    color: rgb(0, 0, 0) !important;
+}
+.lg-close {
+	 position: relative;
+
+	&::before {
+		content: "Close";
+		position: absolute;
+		top: 12px;
+		right: 15px;
+		font-family: "Josefin Sans" !important;
+		color: rgb(0, 0, 0) !important;
+		font-size: 22px !important;
+
+		@media (max-width: 400px){
+			font-size: 18px !important;
+			top: 13px;
+		}
+	}
+
+	&::after {
+		content:'' !important;
+		position: absolute !important;
+		top: 14px !important;
+		left: initial !important;
+		right: -16px !important;
+		display: block;
+		width: 19px;
+		height: 19px;
+		background: url('@img/icons/close.svg') center center / 100% 100% no-repeat;
+	}
 }
