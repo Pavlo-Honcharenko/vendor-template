@@ -1,4 +1,6 @@
-<div id="popup" aria-hidden="true" class="popup">
+
+
+<div id="form-leave-review" aria-hidden="true" class="popup">
 	<div class="popup__wrapper">
 		<div class="popup__content">
 			<button data-close type="button" class="popup__close">
@@ -8,8 +10,94 @@
 				</svg>
 			</button>
 			<div class="popup__text">
-				Popup content
+
+				
+				<div>
+					<form id="leave-review-form" name="form-vendor" class="form-vendor" action="#" method="post">
+	
+						<div class="form-line">
+							<div class="leave-review__text">Rating</div>
+							<div id="set-rating" data-rating="set" data-rating-value="" class="rating"></div>
+						</div>
+	
+						<div class="contact-form__item">
+							<div class="checkboxx">
+								<input id="c_2" class="checkbox__input" type="checkbox" value="1" name="form[checkbox]">
+								<label for="c_2" class="checkbox__label"><span class="checkbox__text">Contacting more vendors is easy. Check this box to use this info on future Junebug vendor forms.</span></label>
+							</div>
+						</div>
+	
+						<div class="contact-form__item">
+							<input autocomplete="off" type="text" name="form[name]" data-validate data-error="This field is required." placeholder="Couple’s Name*" class="input">
+						</div>
+						
+	
+						<div class="contact-form__item">
+							<input type="text" name="form[email]" data-validate data-error="This field is required. Please enter a valid email address." data-required="email" placeholder="Email*" class="input">
+						</div>
+	
+						<div class="contact-form__item">
+							<input autocomplete="off" type="text" name="form[phone]" placeholder="Phone" class="input">
+						</div>
+	
+						<div class="contact-form__item">
+							<textarea name="form[text]" cols="30" rows="10" placeholder="Tell us more details (your vision, your style or questions you may have for this vendor)"></textarea>
+						</div>
+	
+						<button type="submit" class="button">
+							Contact Vendor
+						</button>
+					</form>
+				</div>
+
 			</div>
 		</div>
 	</div>
 </div>
+
+
+<script>
+	// Ensure the DOM is fully loaded before running the script
+	document.addEventListener('DOMContentLoaded', function() {
+		// Get the element with id 'submit-review'
+		var submitReviewButton = document.getElementById('submit-review');
+
+		// Check if the submit button exists
+		if (submitReviewButton) {
+			// Add click event listener to the submit button
+			submitReviewButton.addEventListener('click', function() {
+				// Get the element with id 'leave-review'
+				var leaveReviewElement = document.getElementById('leave-review');
+
+				// Check if the element exists
+				if (leaveReviewElement) {
+					// Get all elements with class 'rating__item--active' inside 'leave-review'
+					var activeRatingItems = leaveReviewElement.getElementsByClassName('rating__item--active');
+
+					// Count the number of active rating items
+					var activeCount = activeRatingItems.length;
+
+					if (activeCount) {
+						
+						// Get the element with id 'set-rating'
+						var setRatingElement = document.getElementById('set-rating');
+
+						// Check if the element exists
+						if (setRatingElement) {
+							// Set the data-rating-value attribute to 5
+							setRatingElement.setAttribute('data-rating-value', activeCount);
+
+							// Get all elements with class 'rating__item' inside 'set-rating'
+							var ratingItems = setRatingElement.getElementsByClassName('rating__item');
+
+							// Add class 'rating__item--active' to the first activeCount number of elements
+							for (var i = 0; i < activeCount && i < ratingItems.length; i++) {
+								ratingItems[i].classList.add('rating__item--active');
+							}
+						} 
+					}
+				} 
+			});
+		}
+	});
+</script>

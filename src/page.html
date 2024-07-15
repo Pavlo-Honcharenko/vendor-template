@@ -239,7 +239,7 @@
 
 
 								<!-- Gallery Images, start -->
-								<div data-iso-items data-gallery class="gallery-images bg-gradient">
+								<!-- <div data-iso-items data-gallery class="gallery-images bg-gradient">
 									<a href="@img/memorybox24.jpeg" data-iso-item class="gallery-image">
 										<img src="@img/memorybox24.jpeg" alt="">
 									</a>
@@ -261,7 +261,29 @@
 									<a href="@img/memorybox26.jpeg" data-iso-item class="gallery-image">
 										<img src="@img/memorybox26.jpeg" alt="">
 									</a>
+								</div> -->
+
+								<div data-gallery class="gallery__cards gallery-images bg-gradient">
+									<a href="@img/memorybox24.jpeg" class="gallery__cell">
+										<img src="@img/memorybox24.jpeg" class="gallery__card" alt="">
+									</a>
+									<a href="@img/memorybox28.jpeg" class="gallery__cell">
+										<img src="@img/memorybox28.jpeg" class="gallery__card" alt="">
+									</a>
+									<a href="@img/memorybox27.jpeg" class="gallery__cell">
+										<img src="@img/memorybox27.jpeg" class="gallery__card" alt="">
+									</a>
+									<a href="@img/memorybox33.jpeg" class="gallery__cell">
+										<img src="@img/memorybox33.jpeg" class="gallery__card" alt="">
+									</a>
+									<a href="@img/memorybox34.jpeg" class="gallery__cell">
+										<img src="@img/memorybox34.jpeg" class="gallery__card" alt="">
+									</a>
+									<a href="@img/memorybox40.jpeg" class="gallery__cell">
+										<img src="@img/memorybox40.jpeg" class="gallery__card" alt="">
+									</a>
 								</div>
+
 								<!-- Gallery Images, end -->
 
 								<!-- <div id="load-gallery" class="load-more">Load more ></div> -->
@@ -636,14 +658,22 @@
 										Leave review
 									</div>
 
-									<form name="leave-review" action="" method="post">
+									<!-- <form id="leave-review" name="leave-review" action="#" method="get">
 										<div class="form-line">
 											<div class="leave-review__text">Rating</div>
 											<div data-rating="set" class="rating"></div>
 										</div>
 										
-										<button type="submit" class="button">Submit review</button>
-									</form>
+										<button id="submit-review" data-popup="#form-leave-review" class="button">Submit review</button>
+									</form> -->
+
+									<div id="leave-review">
+										<div class="form-line">
+											<div class="leave-review__text">Rating</div>
+											<div data-rating="set" class="rating"></div>
+										</div>
+										<button id="submit-review" data-popup="#form-leave-review" class="button">Submit review</button>
+									</div>
 
 									
 								</div>
@@ -653,6 +683,7 @@
 							</div>
 						</section>
 						<!-- End of SECTION REWIEWS -->
+
 
 
 						<!-- SECTION PROMISE -->
@@ -750,6 +781,7 @@
 			</main>
 			@@include('html/_footer.htm',{})
 		</div>
+		@@include('html/_popup.htm',{})
 		@@include('html/_js.htm',{})
 	</body>
 </html>
