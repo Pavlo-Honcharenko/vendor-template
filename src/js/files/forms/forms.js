@@ -30,6 +30,13 @@ export function formFieldsInit(options = { viewPass: false, autoHeight: false })
 			if (!targetElement.hasAttribute('data-no-focus-classes')) {
 				targetElement.classList.remove('_form-focus');
 				targetElement.parentElement.classList.remove('_form-focus');
+				if (targetElement && targetElement.value.trim() !== '') {
+					// Input is filled
+					targetElement.parentElement.classList.remove('filled');
+					targetElement.parentElement.classList.add('filled');
+				} else {
+					targetElement.parentElement.classList.remove('filled');
+				}
 			}
 			// Миттєва валідація
 			targetElement.hasAttribute('data-validate') ? formValidate.validateInput(targetElement) : null;

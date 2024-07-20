@@ -12,40 +12,72 @@
 			<div class="popup__text">
 
 				
-				<div>
-					<form id="leave-review-form" name="form-vendor" class="form-vendor" action="#" method="post">
+				<div class="leave-review">
+					<div class="leave-review__title">
+						Leave a Review
+					</div>
+
+					<form id="leave-review-popup-form" name="form-vendor" class="form-vendor" enctype="multipart/form-data" action="#" method="post">
 	
 						<div class="form-line">
 							<div class="leave-review__text">Rating</div>
-							<div id="set-rating" data-rating="set" data-rating-value="" class="rating"></div>
+							<div id="set-rating-popup" data-rating="set" data-rating-value="" class="rating"></div>
 						</div>
+						<input id="rating-hidden-fild-popup" type="hidden" name="form[rating]" value="">
 	
-						<div class="contact-form__item">
-							<div class="checkboxx">
+						<div id="checkbox-popup" class="contact-form__item">
+							<div class="checkbox">
 								<input id="c_2" class="checkbox__input" type="checkbox" value="1" name="form[checkbox]">
-								<label for="c_2" class="checkbox__label"><span class="checkbox__text">Contacting more vendors is easy. Check this box to use this info on future Junebug vendor forms.</span></label>
+								<label for="c_2" class="checkbox__label"><span class="checkbox__text">Review as a Fellow Wedding Vendor</span></label>
 							</div>
 						</div>
 	
 						<div class="contact-form__item">
-							<input autocomplete="off" type="text" name="form[name]" data-validate data-error="This field is required." placeholder="Couple’s Name*" class="input">
+							<input autocomplete="off" type="text" name="form[name]" data-validate data-error="This field is required." placeholder="Name*" class="input">
 						</div>
 						
+						<div class="roles">
+							<div class="role couple">
+								<input type="radio" id="couple" name="role" value="couple">
+								<div class="label">Couple</div>
+							</div>
+							<div class="role wedding-guest">
+								<input type="radio" id="wedding-guest" name="role" value="wedding-guest">
+								<div class="label">Wedding guest</div>
+							</div>					
+						</div>
 	
 						<div class="contact-form__item">
 							<input type="text" name="form[email]" data-validate data-error="This field is required. Please enter a valid email address." data-required="email" placeholder="Email*" class="input">
 						</div>
+
+						<div class="contact-form__item field-website">
+							<input autocomplete="off" type="text" name="form[website]" placeholder="Website" class="input">
+						</div>
+
 	
 						<div class="contact-form__item">
-							<input autocomplete="off" type="text" name="form[phone]" placeholder="Phone" class="input">
+							<textarea name="form[text]" cols="30" rows="10" placeholder="Your Review"></textarea>
+						</div>
+
+						<!-- New Button for Uploading Photos -->
+						<button type="button" id="upload-photos-button-popup" class="button">Upload up to 3 photos</button>
+						
+						<!-- Fields for uploading photos (initially hidden) -->
+						<div id="photo-upload-fields-popup" style="display: none;">
+							<div class="contact-form__item">
+								<input type="file" name="form[photo1]" class="input">
+							</div>
+							<div class="contact-form__item">
+								<input type="file" name="form[photo2]" class="input">
+							</div>
+							<div class="contact-form__item">
+								<input type="file" name="form[photo3]" class="input">
+							</div>
 						</div>
 	
-						<div class="contact-form__item">
-							<textarea name="form[text]" cols="30" rows="10" placeholder="Tell us more details (your vision, your style or questions you may have for this vendor)"></textarea>
-						</div>
-	
-						<button type="submit" class="button">
-							Contact Vendor
+						<button type="submit" class="button button-submit">
+							Submit Review
 						</button>
 					</form>
 				</div>
@@ -55,49 +87,3 @@
 	</div>
 </div>
 
-
-<script>
-	// Ensure the DOM is fully loaded before running the script
-	document.addEventListener('DOMContentLoaded', function() {
-		// Get the element with id 'submit-review'
-		var submitReviewButton = document.getElementById('submit-review');
-
-		// Check if the submit button exists
-		if (submitReviewButton) {
-			// Add click event listener to the submit button
-			submitReviewButton.addEventListener('click', function() {
-				// Get the element with id 'leave-review'
-				var leaveReviewElement = document.getElementById('leave-review');
-
-				// Check if the element exists
-				if (leaveReviewElement) {
-					// Get all elements with class 'rating__item--active' inside 'leave-review'
-					var activeRatingItems = leaveReviewElement.getElementsByClassName('rating__item--active');
-
-					// Count the number of active rating items
-					var activeCount = activeRatingItems.length;
-
-					if (activeCount) {
-						
-						// Get the element with id 'set-rating'
-						var setRatingElement = document.getElementById('set-rating');
-
-						// Check if the element exists
-						if (setRatingElement) {
-							// Set the data-rating-value attribute to 5
-							setRatingElement.setAttribute('data-rating-value', activeCount);
-
-							// Get all elements with class 'rating__item' inside 'set-rating'
-							var ratingItems = setRatingElement.getElementsByClassName('rating__item');
-
-							// Add class 'rating__item--active' to the first activeCount number of elements
-							for (var i = 0; i < activeCount && i < ratingItems.length; i++) {
-								ratingItems[i].classList.add('rating__item--active');
-							}
-						} 
-					}
-				} 
-			});
-		}
-	});
-</script>

@@ -5,17 +5,232 @@ import { flsModules } from "./modules.js";
 
 
 
-// document.addEventListener("DOMContentLoaded", (function () {
-// 	var galleryImages = document.querySelector(".gallery-images");
-// 	var moreGallery = document.getElementById("more-gallery");
-// 	if (galleryImages && moreGallery) {
-// 		var originalHeight = galleryImages.offsetHeight;
-// 		var newHeight = originalHeight / 2;
-// 		galleryImages.style.height = newHeight + "px";
-// 		moreGallery.addEventListener("click", (function () {
-// 			galleryImages.style.height = originalHeight + "px";
-// 			moreGallery.classList.add("hidden");
-// 			galleryImages.classList.remove("bg-gradient");
-// 		}));
-// 	}
-// }));
+// Ensure the DOM is fully loaded before running the script
+document.addEventListener('DOMContentLoaded', function () {
+	// Get the element with id 'submit-review'
+	var submitReviewButton = document.getElementById('submit-review');
+	var mobileRating = document.getElementById('mobile-rating');
+
+	// Check if the mobile rating id exists
+	if (mobileRating) {
+
+		// Get all elements with class 'rating__item' inside setRatingPC
+		const ratingItems = mobileRating.querySelectorAll('.rating__item');
+
+		// Add click event listener to each 'rating__item'
+		ratingItems.forEach((item, index) => {
+			item.addEventListener('click', () => {
+
+				// Get the element with id 'rating-hidden-fild-popup'
+				var setRatingElement = document.getElementById('rating-hidden-fild-popup');
+
+				// Check if the element exists
+				if (setRatingElement) {
+					// Set the data-rating-value attribute to 5
+					var indexNumber = index + 1;
+					document.getElementById('rating-hidden-fild-popup').value = indexNumber;
+				}
+
+				var setRatingElementPopup = document.getElementById('set-rating-popup');
+				// Get all elements with class 'rating__item' inside 'set-rating-popup'
+				var ratingItems = setRatingElementPopup.getElementsByClassName('rating__item');
+				var activeCount = indexNumber;
+				// Add class 'rating__item--active' to the first activeCount number of elements
+				for (var i = 0; i < activeCount && i < ratingItems.length; i++) {
+					ratingItems[i].classList.add('rating__item--active');
+				}
+			});
+		});
+	}
+
+
+	// Check if the submit button exists
+	if (submitReviewButton) {
+		// Add click event listener to the submit button
+		submitReviewButton.addEventListener('click', function () {
+			// Get the element with id 'leave-review-in-popup'
+			var leaveReviewElement = document.getElementById('leave-review-in-popup');
+
+			// Check if the element exists
+			if (leaveReviewElement) {
+				// Get all elements with class 'rating__item--active' inside 'leave-review-in-popup'
+				var activeRatingItems = leaveReviewElement.getElementsByClassName('rating__item--active');
+
+				// Count the number of active rating items
+				var activeCount = activeRatingItems.length;
+
+				if (activeCount) {
+					document.getElementById('rating-hidden-fild-popup').value = activeCount;
+
+					// Get the element with id 'set-rating-popup'
+					var setRatingElementPopup = document.getElementById('set-rating-popup');
+
+					// Check if the element exists
+					if (setRatingElementPopup) {
+						// Set the data-rating-value attribute to 5
+						setRatingElementPopup.setAttribute('data-rating-value', activeCount);
+
+						// Get all elements with class 'rating__item' inside 'set-rating-popup'
+						var ratingItems = setRatingElementPopup.getElementsByClassName('rating__item');
+
+						// Add class 'rating__item--active' to the first activeCount number of elements
+						for (var i = 0; i < activeCount && i < ratingItems.length; i++) {
+							ratingItems[i].classList.add('rating__item--active');
+						}
+					}
+				}
+
+			}
+		});
+	}
+
+	// Select all elements with the class 'role'
+	const roleElements = document.querySelectorAll('.role');
+
+	// Add a click event listener to each element
+	roleElements.forEach(element => {
+		element.addEventListener('click', function () {
+			// Get all radio buttons with the name 'role'
+			const roles = document.getElementsByName('role');
+
+			// Check which radio button is selected
+			roles.forEach(role => {
+				if (role.checked) {
+					let roleParent = role.closest('.role');
+					roleParent.classList.add('selected');
+				} else {
+					let roleParent = role.closest('.role');
+					roleParent.classList.remove('selected');
+				}
+			});
+		});
+	});
+
+	const uploadButtonPopup = document.getElementById('upload-photos-button-popup');
+	const photoUploadFieldsPopup = document.getElementById('photo-upload-fields-popup');
+
+	uploadButtonPopup.addEventListener('click', function () {
+		photoUploadFieldsPopup.style.display = 'block';
+	});
+
+	const uploadButtonPC = document.getElementById('upload-photos-button-pc');
+	const photoUploadFieldsPC = document.getElementById('photo-upload-fields-pc');
+
+	uploadButtonPC.addEventListener('click', function () {
+		photoUploadFieldsPC.style.display = 'block';
+	});
+
+
+
+
+
+	var setRatingPopup = document.getElementById('set-rating-popup');
+
+	// Check if the submit button exists
+	if (setRatingPopup) {
+		// Get all elements with class 'rating__item' inside setRatingPC
+		const ratingItems = setRatingPopup.querySelectorAll('.rating__item');
+
+		// Add click event listener to each 'rating__item'
+		ratingItems.forEach((item, index) => {
+			item.addEventListener('click', () => {
+				// Log the index of the clicked element + 1 (to make it 1-based)
+				console.log(`Clicked on element ${index + 1}`);
+
+				// Get the element with id 'rating-hidden-fild-popup'
+				var setRatingElement = document.getElementById('rating-hidden-fild-popup');
+
+				// Check if the element exists
+				if (setRatingElement) {
+					// Set the data-rating-value attribute to 5
+					var indexNumber = index + 1;
+					document.getElementById('rating-hidden-fild-popup').value = indexNumber;
+				}
+			});
+		});
+	}
+
+	// var submitReviewButton = document.getElementById('submit-review');
+	const hideFields = document.getElementById('hide-fields');
+	const submitButtonPC = document.getElementById('submit-pc');
+
+	// Add event listener to the submit button
+	submitButtonPC.addEventListener('click', function (event) {
+		// Check if any of the hideFields have the class 'hidden'
+		if (hideFields.classList.contains('hide')) {
+			event.preventDefault();
+			hideFields.classList.remove('hide');
+		}
+	});
+
+
+	var setRatingPC = document.getElementById('set-rating-pc');
+
+	// Check if the setRatingPC exists
+	if (setRatingPC) {
+		// Get all elements with class 'rating__item' inside setRatingPC
+		const ratingItems = setRatingPC.querySelectorAll('.rating__item');
+
+		// Add click event listener to each 'rating__item'
+		ratingItems.forEach((item, index) => {
+			item.addEventListener('click', () => {
+
+				// Get the element with id 'rating-hidden-fild-pc'
+				var setRatingElement = document.getElementById('rating-hidden-fild-pc');
+
+				// Check if the element exists
+				if (setRatingElement) {
+					// Set the data-rating-value attribute to 5
+					var indexNumber = index + 1;
+					document.getElementById('rating-hidden-fild-pc').value = indexNumber;
+				}
+
+				hideFields.classList.remove('hide');
+			});
+		});
+	}
+
+
+
+	// Check if the element with ID 'leave-review-checkbox-popup' exists
+	const checkboxPopup = document.getElementById('checkbox-popup');
+	if (checkboxPopup) {
+		checkboxPopup.addEventListener('click', () => {
+			// Check if the checkbox with the class 'checkbox__input' is checked
+			const checkedCheckbox = checkboxPopup.querySelector('.checkbox__input:checked');
+			if (checkedCheckbox) {
+				var lvForm = document.querySelector('#leave-review-popup-form');
+				if (lvForm) {
+					lvForm.classList.add('checked');
+				}
+			} else {
+				var lvForm = document.querySelector('#leave-review-popup-form');
+				if (lvForm) {
+					lvForm.classList.remove('checked');
+				}
+			}
+		});
+	}
+
+
+
+	const checkboxPC = document.getElementById('checkbox-pc');
+	if (checkboxPC) {
+		checkboxPC.addEventListener('click', () => {
+			// Check if the checkbox with the class 'checkbox__input' is checked
+			const checkedCheckbox = checkboxPC.querySelector('.checkbox__input:checked');
+			if (checkedCheckbox) {
+				var lvForm = document.querySelector('#leave-review-form');
+				if (lvForm) {
+					lvForm.classList.add('checked');
+				}
+			} else {
+				var lvForm = document.querySelector('#leave-review-form');
+				if (lvForm) {
+					lvForm.classList.remove('checked');
+				}
+			}
+		});
+	}
+
+});

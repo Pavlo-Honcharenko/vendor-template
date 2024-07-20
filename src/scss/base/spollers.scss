@@ -22,8 +22,8 @@
 	min-height: 80px;
 	display: flex;
 	align-items: center;
-	font-size: 15px;
-	line-height: 150%;
+	font-size: 16px;
+	line-height: 140%;
 	&::marker,
 	&::-webkit-details-marker {
 		display: none;
@@ -38,10 +38,10 @@
 		&::after {
 			content: "";
 			position: absolute;
-			right: 10px;
+			right: 15px;
 			top: 50%;
-			background-color: #000;
-			height: 2px;
+			background-color: #989898;
+			height: 1px;
 			width: 12px;
 			transition: transform 0.5s ease 0s;
 		}
@@ -70,8 +70,8 @@
 .spollers__body {
 	padding: toRem(20) toRem(25);
 	border-radius: toRem(5);
-	font-size: 13px;
-	line-height: 180%;
+	font-size: 16px;
+	line-height: 140%;
 	color: #7C7C7C;
 
 	@media (max-width:$mobile){
