@@ -24,6 +24,30 @@ export function formFieldsInit(options = { viewPass: false, autoHeight: false })
 			targetElement.hasAttribute('data-validate') ? formValidate.removeError(targetElement) : null;
 		}
 	});
+
+
+	function checkInputTextareaState(e) {
+		const targetElement = e.target;
+		if (targetElement.tagName === 'INPUT' || targetElement.tagName === 'TEXTAREA') {
+			if (targetElement && targetElement.value.trim() !== '') {
+				// Input is filled
+				targetElement.parentElement.classList.remove('filled');
+				targetElement.parentElement.classList.add('filled');
+			} else {
+				targetElement.parentElement.classList.remove('filled');
+			}
+		}
+	}
+
+	document.body.addEventListener("click", function (e) {
+		checkInputTextareaState(e);
+	});
+
+	document.body.addEventListener("input", function (e) {
+		checkInputTextareaState(e);
+	});
+
+
 	document.body.addEventListener("focusout", function (e) {
 		const targetElement = e.target;
 		if ((targetElement.tagName === 'INPUT' || targetElement.tagName === 'TEXTAREA')) {

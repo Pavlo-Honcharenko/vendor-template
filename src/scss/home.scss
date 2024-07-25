@@ -188,7 +188,8 @@
 
 ._form-error .input {
 	outline: none;
-	border: 1px solid #DA312E;
+	border: 1px solid #eee;
+	border-bottom: 2px solid #DA312E;
 }
 .checkbox__text {
 	padding-right: 3px;
@@ -202,6 +203,9 @@
 }
 
 .contact-form__item._form-focus,  .contact-form__item.filled {
+	position: relative;
+}
+.contact-form__item.filled {
 	position: relative;
 	
 	&::after {
@@ -238,7 +242,7 @@
 }
 
 ._form-focus .input, ._form-focus textarea {
-	border: initial;
+	border: 1px solid #eee;
 	border-bottom: 2px solid #C99A0C;
 	position: relative;
 }
@@ -412,8 +416,27 @@ input, textarea {
 					margin: 0 auto 35px;
 				}
 
+				@media (max-width: 650px){
+					max-width: 100%;
+					justify-content: center;
+					align-items: center;
+					gap: 12vw;
+				}
+
+				@media (max-width: 420px){
+					gap: 8vw;
+				}
+
 				.destination-wedding, .three-years {
 					flex: 0 1 180px;
+
+					@media (max-width: 1200px){
+						flex: 0 1 160px;
+					}
+
+					@media (max-width: 650px){
+						flex: 0 1 130px;
+					}
 
 					img {
 						width: 100%;
@@ -426,6 +449,15 @@ input, textarea {
 						width: 97%;
 						margin-left: auto;
 						max-height: 54px;
+
+						@media (max-width: 1200px){
+							max-height: 48px;
+						}
+
+						@media (max-width: 650px){
+							width: 100%;
+							max-height: 41px;
+						}
 					}
 				}
 			}
@@ -1170,6 +1202,7 @@ input, textarea {
 		@media (max-width:$mobile){
 			margin-bottom: 30px;
 			font-size: 15px;
+			padding: 0 10px;
 		}
 
 	}
@@ -1182,6 +1215,7 @@ input, textarea {
 	// .features-item__image
 	&__image {
 		width: 100%;
+		max-width: 500px;
 		margin-bottom: 25px;
 
 		img {
@@ -1239,26 +1273,28 @@ input, textarea {
 
 	.swiper-button-prev, .swiper-button-next {
 		position: absolute;
-		top: 75%;
+		top: 32%;
 		display: block;
 		width: 15px;
 		height: 30px;
 
-		@media (max-width: 1300px){
-			top: 70%;
+		@media (max-width: 1240px){
+			top: 29%;
 		}
-		@media (max-width: 1200px){
-			  top: 64%;
+		@media (max-width: 992px){
+			top: 32%;
 		}
-
-		@media (max-width: 1100px){
-			  top: 62%;
+		@media (max-width: 830px){
+			top: 30%;
 		}
-		@media (max-width: 900px){
-			  top: 58%;
+		@media (max-width: 768px){
+			top: 29%;
 		}
-		@media (max-width:$mobile){
-			  top: 64%;
+		@media (max-width: 640px){
+			top: initial;
+			bottom: 80px;
+			width: 18px;
+			height: 35px;
 		}
 	}
 	.swiper-button-prev {
@@ -1318,8 +1354,16 @@ input, textarea {
 	.awards-item {
 		max-width: 260px;
 
+		@media (max-width: 1200px){
+			max-width: 200px;
+		}
+
 		@media (max-width:$mobile){
-			max-width: 220px;
+			max-width: 200px;
+		}
+
+		@media (max-width:$mobileSmall){
+			max-width: 165px;
 		}
 	}
 	.awards-image {
@@ -1356,8 +1400,12 @@ input, textarea {
 		color: #211D1E;
 		margin-bottom: 60px;
 
+		@media (max-width:$tablet){
+			margin-bottom: 30px;
+		}
+
 		@media (max-width:$mobile){
-			 font-size: 15px; 
+			font-size: 15px; 
 		}
 	}
 }
@@ -1372,7 +1420,7 @@ input, textarea {
 				column-gap: 45px;
 	margin-bottom: -45px;
 
-	@media (max-width:$mobile){
+	@media (max-width:$tablet){
 		 -webkit-column-count: 1;
 		-moz-column-count: 1;
 				column-count: 1; 
@@ -1388,6 +1436,10 @@ input, textarea {
 		-webkit-column-break-inside: avoid;
 			-moz-column-break-inside: avoid;
 					break-inside: avoid;
+
+		@media (max-width:$tablet){
+			padding: 40px;
+		}
 	}
 
 	.rewiew__cell > .review {
@@ -1440,7 +1492,8 @@ input, textarea {
 		}
 		// .review__text
 		&__text {
-			font-size: 16px;
+			font-size: 18px;
+			font-weight: 300;
     		color: #211D1E;
 			line-height: 130%;
 			p {
@@ -2080,10 +2133,77 @@ textarea {
 
 
 
+//============================================FLOAT RIBBON===========================================================
+// .floating-ribbon__container {
+// 	position: relative;
+// }
+.floating-ribbon {
+	position: fixed;
+	top: calc(100vh - 64px);
+	width: 100vw;
+	background-color: #C99A0C;
+	height: 64px;
+	border-radius: 0 32px 0 0;
+	padding: 10px 30px;
+	display: none;
+
+	@media (max-width:$mobile){
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	
+		// .float-ribbon__text
+		&__text {
+			color: #000;
+			font-size: 22px;
+			margin: 0 auto;
+			flex: 0 0 calc(100% - 50px);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			
+			span {
+				text-align: center;
+				transform: translate(15px, 0);
+			}
+		}
+		// .float-ribbon__arrow
+		&__arrow {
+			margin-left: auto;
+			img {
+				height: 30px;
+				width: 18px;
+				animation: moveLeftRight 2.3s infinite;
+			}
+		}
+}
+@keyframes moveLeftRight {
+  0% {
+    transform: translateX(0);
+  }
+  48% {
+    transform: translateX(-8px);
+  }
+  98% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 
 
 
-
+#contact {
+.contact-form {
+		display: block;
+		position: relative;
+		width: 100%;
+		padding: 0 10px 10px;
+		margin: 20px 0 0 0;
+	}
+}
 
 
 

@@ -165,14 +165,18 @@ function initSliders() {
 					spaceBetween: 20,
 					autoHeight: true,
 				},
+				768: {
+					slidesPerView: 1,
+					spaceBetween: 20,
+				},
 				992: {
 					slidesPerView: 2,
 					spaceBetween: 20,
 				},
-				1268: {
-					slidesPerView: 2,
-					spaceBetween: 20,
-				},
+				// 1268: {
+				// 	slidesPerView: 2,
+				// 	spaceBetween: 20,
+				// },
 			},
 
 			// Події
@@ -190,8 +194,8 @@ function initSliders() {
 			modules: [Navigation, Autoplay],
 			observer: true,
 			observeParents: true,
-			slidesPerView: 1.08,
-			spaceBetween: 10,
+			slidesPerView: 1,
+			spaceBetween: 0,
 			//autoHeight: true,
 			speed: 800,
 
