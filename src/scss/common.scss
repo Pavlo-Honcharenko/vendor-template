@@ -20,28 +20,24 @@
 .lg-backdrop {
 	background-color: rgba(255, 255, 255, 0.92) !important;
 
-	@media (min-width:$mobile){
-		left: 300px !important;
-	}
-	@media (min-width: 1600px){
-		left: 350px !important;
-	}
-
-	// @media (min-width: 2000px){
-	// 	left: 19.4vw !important;
+	// @media (min-width:$mobile){
+	// 	left: 300px !important;
+	// }
+	// @media (min-width: 1600px){
+	// 	left: calc(50% - 450px) !important;
 	// }
 	
 }
 .lg-outer {
 
-	@media (min-width:$mobile){
-		width: calc(100% - 300px) !important;
-		left: 300px !important;
-	}
-	@media (min-width: 1600px){
-		width: calc(100% - 350px) !important;
-		left: 350px !important;
-	}
+	// @media (min-width:$mobile){
+	// 	width: calc(100% - 300px) !important;
+	// 	left: 300px !important;
+	// }
+	// @media (min-width: 1600px){
+	// 	width: calc(100% - 350px) !important;
+	// 	left: 350px !important;
+	// }
 
 	// @media (min-width: 2000px){
 	// 	width: 80.6vw !important;
