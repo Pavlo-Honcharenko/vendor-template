@@ -52,6 +52,7 @@ function initSliders() {
 			// Ефекти
 			effect: 'fade',
 			*/
+
 			autoplay: {
 				delay: 3000,
 				disableOnInteraction: false,
@@ -117,7 +118,7 @@ function initSliders() {
 			observeParents: true,
 			slidesPerView: 1,
 			spaceBetween: 30,
-			autoHeight: true,
+			// autoHeight: true,
 			speed: 800,
 
 			//touchRatio: 0,
@@ -134,6 +135,7 @@ function initSliders() {
 				delay: 6000,
 				disableOnInteraction: false,
 			},
+
 
 
 			// Пагінація
