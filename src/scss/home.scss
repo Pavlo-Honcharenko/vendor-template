@@ -798,7 +798,7 @@ input, textarea {
 
 	.gallery__cell {
 		position: relative; 
-		padding-bottom: 66.5%;
+		padding-bottom: 73.5%;
 		overflow: hidden;
 	}
 
@@ -843,7 +843,7 @@ input, textarea {
 		left: 0;
 		bottom: 0;
 		width: 100%;
-		height: 350px;
+		height: 250px;
 		background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
 		z-index: 2;
 		pointer-events: none;
@@ -1343,7 +1343,7 @@ input, textarea {
 		}
 		@media (max-width: 640px){
 			top: initial;
-			bottom: 80px;
+			bottom: 100px;
 			width: 18px;
 			height: 35px;
 		}
@@ -1462,42 +1462,59 @@ input, textarea {
 }
 
 
-.reviews-list {
-		-webkit-column-count: 2;
-		-moz-column-count: 2;
-				column-count: 2;
-	-webkit-column-gap: 45px;
-		-moz-column-gap: 45px;
-				column-gap: 45px;
-	margin-bottom: -45px;
+// .reviews-list {
+// 		-webkit-column-count: 2;
+// 		-moz-column-count: 2;
+// 				column-count: 2;
+// 	-webkit-column-gap: 45px;
+// 		-moz-column-gap: 45px;
+// 				column-gap: 45px;
+// 	margin-bottom: -45px;
 
-	@media (max-width:$tablet){
-		 -webkit-column-count: 1;
-		-moz-column-count: 1;
-				column-count: 1; 
+// 	@media (max-width:$tablet){
+// 		 -webkit-column-count: 1;
+// 		-moz-column-count: 1;
+// 				column-count: 1; 
+// 	}
+
+// 	.review__cell {
+// 		margin: 0;
+// 		display: -ms-grid;
+// 		display: grid;
+// 		-ms-grid-rows: 1fr auto;
+// 		grid-template-rows: 1fr auto;
+// 		margin-bottom: 55px;
+// 		-webkit-column-break-inside: avoid;
+// 			-moz-column-break-inside: avoid;
+// 					break-inside: avoid;
+
+// 		@media (max-width:$tablet){
+// 			padding: 40px;
+// 		}
+// 	}
+
+// 	.rewiew__cell > .review {
+// 		grid-row: 1/-1;
+// 		-ms-grid-column: 1;
+// 		grid-column: 1;
+	// }
+
+
+.reviews-list {
+	display: grid; 
+	grid-template-columns: repeat(2, 1fr); 
+	gap: 5px; 
+
+	@media (max-width: $tablet){
+		grid-template-columns: repeat(1, 1fr); 
 	}
+
 
 	.review__cell {
-		margin: 0;
-		display: -ms-grid;
-		display: grid;
-		-ms-grid-rows: 1fr auto;
-		grid-template-rows: 1fr auto;
-		margin-bottom: 55px;
-		-webkit-column-break-inside: avoid;
-			-moz-column-break-inside: avoid;
-					break-inside: avoid;
-
-		@media (max-width:$tablet){
-			padding: 40px;
-		}
+		position: relative; 
+		padding: 40px;
 	}
 
-	.rewiew__cell > .review {
-		grid-row: 1/-1;
-		-ms-grid-column: 1;
-		grid-column: 1;
-	}
 	
 	.review {
 		// flex: 0 1 47%;
@@ -1615,7 +1632,6 @@ input, textarea {
 		content:'';
 		position: absolute;
 		top: initial;
-		bottom: 35px;
 	}
 }
 
