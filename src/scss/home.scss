@@ -798,8 +798,14 @@ input, textarea {
 
 	.gallery__cell {
 		position: relative; 
-		padding-bottom: 73.5%;
+		padding-bottom: 100%;
 		overflow: hidden;
+
+		@media (any-hover: hover) {
+			&:hover {
+				overflow: visible;
+			}
+		}
 	}
 
 	.gallery__card {
@@ -807,8 +813,7 @@ input, textarea {
 		top: 50%;
 		left: 50%;
 		width: 100%;
-		min-height: 100%;
-		height: auto;
+		height: 100%;
 		object-fit: cover;
 		object-position: center center; /* Centering the image */
 		transform: translate(-50%, -50%); /* Adjust positioning */
