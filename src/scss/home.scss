@@ -790,24 +790,20 @@ input, textarea {
 	// grid-column: 1;
 	// }
 
-	.gallery__cards {
-		display: grid; 
-		grid-template-columns: repeat(2, 1fr); 
-		gap: 5px; 
-	}
 
+//=======================================================================================================
+
+
+	.gallery__cards {
+		display: grid;
+		grid-template-columns: repeat(2,1fr);
+		gap: 5px;
+	}
 	.gallery__cell {
-		position: relative; 
+		position: relative;
 		padding-bottom: 100%;
 		overflow: hidden;
-
-		@media (any-hover: hover) {
-			&:hover {
-				overflow: visible;
-			}
-		}
 	}
-
 	.gallery__card {
 		position: absolute;
 		top: 50%;
@@ -818,29 +814,14 @@ input, textarea {
 		object-position: center center; /* Centering the image */
 		transform: translate(-50%, -50%); /* Adjust positioning */
 	}
-
-
-
-
 	.gallery-images {
 		margin: 0 auto;
 		width: 100%;
-		background-color: #F9F8F7;
+		background-color: #f9f8f7;
 	}
-	
-	.gallery-image {
-		border: 2px solid #FFF;
-		width: 50%;
-
-		img {
-			width: 100%;
-		}
+	.bg-gradient {
+		position: relative;
 	}
-
-}
-
-.bg-gradient {
-	position: relative;
 
 	&::after {
 		content:'';
