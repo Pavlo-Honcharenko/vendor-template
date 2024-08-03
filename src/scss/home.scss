@@ -822,7 +822,7 @@ input, textarea {
 		position: absolute;
 		top: 50%;
 		left: 50%;
-		width: 150%;
+		width: 155%;
 		height: 150%;
 		min-height: 100%;
 		min-width: 100%;
@@ -1351,6 +1351,9 @@ input, textarea {
 			bottom: 100px;
 			width: 18px;
 			height: 35px;
+		}
+		@media (max-width: 520px){
+			bottom: 130px;
 		}
 	}
 	.swiper-button-prev {
