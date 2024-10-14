@@ -240,11 +240,11 @@ document.addEventListener('DOMContentLoaded', function () {
 	}
 
 
-	// A script for choosing no more than 3 checkboxes in a contact form
-	const container = document.querySelector('.contact-form-PC.max-3-checkboxes');
+	// A script for choosing no more than 3 checkboxes in a contact form for PC
+	const containerPC = document.querySelector('.contact-form-PC.max-3-checkboxes');
 
-	if (container) {
-		const checkboxes = container.querySelectorAll('.checkbox__input');
+	if (containerPC) {
+		const checkboxes = containerPC.querySelectorAll('.checkbox__input');
 		const maxChecked = 3;
 
 		if (checkboxes.length > 0) {
@@ -252,7 +252,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			checkboxes.forEach(checkbox => {
 				checkbox.addEventListener('change', () => {
 					// We count the number of selected checkboxes
-					const checkedCount = container.querySelectorAll('.checkbox__input:checked').length;
+					const checkedCount = containerPC.querySelectorAll('.checkbox__input:checked').length;
 
 					// If exactly 3 checkboxes are selected, disable the unchecked ones
 					if (checkedCount >= maxChecked) {
@@ -285,6 +285,91 @@ document.addEventListener('DOMContentLoaded', function () {
 			});
 		}
 	}
+
+
+
+	// A script for choosing no more than 3 checkboxes in a contact form fpr mobile devices
+	const containerMobile = document.querySelector('.contact-form-mob.max-3-checkboxes');
+
+	if (containerMobile) {
+		const checkboxes = containerMobile.querySelectorAll('.checkbox__input');
+		const maxChecked = 3;
+
+		if (checkboxes.length > 0) {
+			// Add a change processor for each checkbox
+			checkboxes.forEach(checkbox => {
+				checkbox.addEventListener('change', () => {
+					// We count the number of selected checkboxes
+					const checkedCount = containerMobile.querySelectorAll('.checkbox__input:checked').length;
+
+					// If exactly 3 checkboxes are selected, disable the unchecked ones
+					if (checkedCount >= maxChecked) {
+						checkboxes.forEach(cb => {
+							if (!cb.checked) {
+								cb.classList.add('disabled');
+								cb.disabled = true;
+
+								// Add the 'disabled' class to the next element (label)
+								const nextElement = cb.nextElementSibling;
+								if (nextElement) {
+									nextElement.classList.add('disabled');
+								}
+							}
+						});
+					} else {
+						// If less than 3 are selected, enable all checkboxes
+						checkboxes.forEach(cb => {
+							cb.classList.remove('disabled');
+							cb.disabled = false;
+
+							// Remove the 'disabled' class from the next element (label)
+							const nextElement = cb.nextElementSibling;
+							if (nextElement) {
+								nextElement.classList.remove('disabled');
+							}
+						});
+					}
+				});
+			});
+		}
+	}
+
+
+
+
+
+	const locationSelect = document.querySelector('#find-vendors-filter-location');
+	const categorySelect = document.querySelector('#find-vendors-filter-cathegory');
+	const locationDropdown = document.querySelector('#find-vendors-filter-locations');
+	const categoryDropdown = document.querySelector('#find-vendors-filter-cathegories');
+
+	// Check if elements exist before using them
+	if (locationSelect && categorySelect && locationDropdown && categoryDropdown) {
+
+		locationSelect.addEventListener('click', function () {
+			console.log('click locationSelect');
+			// Add _active and _visible class for location
+			locationSelect.classList.add('_active');
+			locationDropdown.classList.add('_visible');
+
+			// Remove classes for category
+			categorySelect.classList.remove('_active');
+			categoryDropdown.classList.remove('_visible');
+		});
+
+		categorySelect.addEventListener('click', function () {
+			console.log('click categorySelect');
+			// Add _active and _visible class for category
+			categorySelect.classList.add('_active');
+			categoryDropdown.classList.add('_visible');
+
+			// Remove classes for location
+			locationSelect.classList.remove('_active');
+			locationDropdown.classList.remove('_visible');
+		});
+	}
+
+
 
 
 
