@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html id="vendor-html" lang="en">
+	@@include('html/_head.htm',{
+	"title":"Page Hotlist"
+	})
+	<body id="vendor-body">
+		<div class="wrapper">
+			@@include('html/_header.htm',{})
+
+
+			<div id="directory-listings" class="page">
+
+				<div class="main-wrapper">
+					<div id="col-contact" class="col-contact col-contact-motd-spacer">
+						<div id="contact-form-wrapper">
+							<div id="contact-form" class="contact-form contact-form-left contact-form-PC max-3-checkboxes">
+								<img src="@img/icons/hand.svg" class="contact-form-icon" alt="">
+								<h2>The Exclusive <span>White Glove</span> Service</h2>
+								<h3>Get personalized vendor recommendations curated by our team of experts. Tell us what you’re looking for below and we’ll send your custom vendor matches.</h3>
+
+								<form name="form-vendor" class="form-vendor newportfolio-form" method="POST" action="#">
+
+									<div class="contact-form__item">
+											<input id="userFirstName" name="userFirstName" type="text" autocomplete="off" data-validate="" data-error="This field is required." placeholder="Couple’s Name*" class="input">
+									</div>
+
+									<div class="contact-form__item">
+											<input id="userEmail" name="userEmail" type="email" data-validate="" data-error="This field is required. Please enter a valid email address." data-required="email" placeholder="Email*" class="input">
+									</div>
+
+									<div class="contact-form__item">
+											<input id="userWeddingLocation" name="userWeddingLocation" type="text" placeholder="Wedding Location" class="input">
+									</div>
+
+									<div class="contact-form__text">
+										Which vendors are you looking for?*
+									</div>
+									<div class="contact-form__text--small">Choose up to 3 categories.</div>
+
+									<div class="checkboxes">
+										<div class="contact-form__item">
+											<div class="checkbox">
+												<input id="contactPhotographers" class="contact-autofill checkbox__input" type="checkbox" value="1">
+												<label for="contactPhotographers" class="checkbox__label">
+													<span class="checkbox__text">Photographers</span>
+												</label>
+											</div>
+										</div>
+
+										<div class="contact-form__item">
+											<div class="checkbox">
+												<input id="contactPlanners" class="contact-autofill checkbox__input" type="checkbox" value="1">
+												<label for="contactPlanners" class="checkbox__label">
+													<span class="checkbox__text">Planners</span>
+												</label>
+											</div>
+										</div>
+
+										<div class="contact-form__item">
+											<div class="checkbox">
+												<input id="contactVideographers" class="contact-autofill checkbox__input" type="checkbox" value="1">
+												<label for="contactVideographers" class="checkbox__label">
+													<span class="checkbox__text">Videographers</span>
+												</label>
+											</div>
+										</div>
+
+										<div class="contact-form__item">
+											<div class="checkbox">
+												<input id="contactFlorists" class="contact-autofill checkbox__input" type="checkbox" value="1">
+												<label for="contactFlorists" class="checkbox__label">
+													<span class="checkbox__text">Florists</span>
+												</label>
+											</div>
+										</div>
+
+										<div class="contact-form__item">
+											<div class="checkbox">
+												<input id="contactHairMakeup" class="contact-autofill checkbox__input" type="checkbox" value="1">
+												<label for="contactHairMakeup" class="checkbox__label">
+													<span class="checkbox__text">Hair & Makeup</span>
+												</label>
+											</div>
+										</div>
+
+										<div class="contact-form__item">
+											<div class="checkbox">
+												<input id="contactVenues" class="contact-autofill checkbox__input" type="checkbox" value="1">
+												<label for="contactVenues" class="checkbox__label">
+													<span class="checkbox__text">Venues</span>
+												</label>
+											</div>
+										</div>
+									</div>
+
+									<div class="contact-form__item">
+											<textarea id="userDetails" name="userDetails" placeholder="What’s your style or vision? Let us know what qualities matter most to you."></textarea>
+									</div>
+
+									
+
+									<button id="get-custom-matches-button">
+										Get Custom Matches
+									</button>
+								</form>
+
+
+							</div>
+						</div>
+					</div>
+
+					<div id="col-content" class="col-content">
+						<div id="directory-listings-wrapper">
+
+								<div id="find-vendors-wrapper">
+									<div id="breadcrumbs" class="breadcrumbs">
+										<div class="breadcrumbs__item">
+											<a href="#">Home</a>
+										</div>
+										<div class="breadcrumbs__item">
+											<a href="#">Texas</a>
+										</div>
+										<div class="breadcrumbs__item">
+											<a href="#">Austin</a>
+										</div>
+										<div class="breadcrumbs__item">
+											<a href="#">Best Of</a>
+										</div>
+										<div class="breadcrumbs__item">
+											Photographers
+										</div>
+									</div>
+
+									<div id="find-vendors">
+										<div id="best-of">Best of...</div>
+										<h1>... in ...</h1>
+									</div>
+								</div>
+
+								<div id="vendors">
+
+									<div class="vendor">
+										<div class="vendor-details-wrapper">
+											vendor_uri
+											<h2><a href="#vendor_uri">Vendor Name</a></h2>
+											<div class="vendor__location">
+												<img src="/newportfolio/img/icons/decor-geo.svg" class="icon" alt="geo">
+												Based in LOCATION
+											</div>
+											<a href="#URL>"><button>Explore &gt;</button></a>
+											<button>Contact Vendor &gt;</button>
+										</div>
+										<div class="vendor-images-wrapper">
+											<div class="img-wrapper">
+												<img src="#THUMBNAIL">
+											</div>
+											<div class="img-wrapper">
+												<img src="#THUMBNAIL">
+											</div>
+										</div>
+									</div>
+
+								</div>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia nesciunt quidem deleniti quae accusantium dolorum similique vel ullam culpa officia quis illum, voluptas eos? Aspernatur, deleniti facere cupiditate laborum aperiam dolor delectus sint sapiente laboriosam officia quas qui sequi dolores omnis expedita beatae provident eaque quam et at. Quaerat magnam illo nihil voluptatem ex ullam. Modi dignissimos eum id rem quidem enim, dolorem expedita, fugiat saepe corrupti accusantium tenetur, natus eaque provident fugit nulla consequatur sint laborum accusamus numquam officia mollitia dolore molestiae? Nulla voluptatem maiores officiis dignissimos quam accusantium aperiam eligendi, possimus vitae atque temporibus perferendis! Dignissimos illum debitis, iste repudiandae repellendus quos, iusto explicabo itaque architecto corrupti ipsa deleniti eveniet placeat dolor autem nulla consequuntur pariatur ducimus nemo culpa fugiat. Vel possimus odit molestias. Veritatis consectetur molestias vel similique labore doloribus distinctio non. Maxime nisi autem tempore id minima veritatis officiis itaque commodi laboriosam quo provident earum ullam, laborum unde beatae atque saepe magni molestias labore illum sit tempora reiciendis! In voluptate reiciendis ut sed eius sapiente quasi eligendi aliquam, aperiam nam corporis, optio tempore debitis doloribus maxime, ratione dolores esse facilis pariatur a sit labore. Facilis consequatur reiciendis sapiente. Quidem velit nostrum accusantium quaerat sapiente? Nihil, assumenda. Fugit voluptatem alias id magni in suscipit nostrum quidem rem! Qui, tempore dolorum consequatur illum saepe iure quos rem atque sed voluptatem voluptas perferendis consectetur modi hic. Maiores officia adipisci dolorem totam, nihil maxime harum molestiae nesciunt veniam dolor inventore repellat facere repellendus similique sed autem molestias exercitationem dolore, error quidem ullam vel laudantium! Cupiditate ipsam odio id tempora repudiandae eveniet voluptas laborum cumque doloribus eaque. Architecto delectus illum doloribus ducimus esse aspernatur, corporis sapiente ut temporibus quibusdam vero voluptatum recusandae expedita minima reprehenderit maxime. Iusto delectus porro architecto similique quod, repellendus cumque. Eligendi magnam recusandae aperiam similique, delectus vitae quisquam architecto praesentium vel possimus nihil placeat eaque omnis quibusdam. Excepturi provident aliquam exercitationem vero aperiam laborum quae perspiciatis, fugit optio corrupti in cum impedit possimus tenetur maxime eius! In dolor, temporibus consectetur sequi beatae voluptatem dolores modi odio, quibusdam culpa eaque iusto magni sed veritatis voluptatibus eius eveniet sit sint. Id tenetur maiores exercitationem cumque, delectus libero repudiandae possimus in accusantium sunt, at, dicta vitae. Nam, consequuntur culpa recusandae nisi, in quos rerum ipsum inventore tenetur sed mollitia nemo hic eaque accusamus voluptatum, optio magni fugit exercitationem doloribus quisquam quas placeat. Officiis ipsa suscipit, ut cum animi magni nesciunt rem error consequatur eveniet minima consectetur expedita praesentium ad nobis reprehenderit! Magni quas vitae cumque quidem consequatur eum sed, adipisci illo sunt distinctio. Culpa consequuntur fugit dolorem corporis. Ullam doloribus quas sint ex eveniet sed, earum, neque, ratione placeat aliquid illum? Blanditiis, illum consequatur! Saepe culpa, totam deleniti aut recusandae tenetur consectetur ab praesentium corrupti excepturi, voluptas itaque tempora? Odit, neque? Ea mollitia nostrum magnam. Quod est doloremque molestias ut id accusantium cupiditate ducimus ratione accusamus saepe in perferendis, quam possimus inventore hic ipsa aspernatur quo, eligendi dolores corporis? Iusto sint aut laboriosam impedit reprehenderit animi dolorem, omnis tempore nihil!
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_popup.htm',{})
+		@@include('html/_js.htm',{})
+	</body>
+</html>

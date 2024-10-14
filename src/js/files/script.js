@@ -1,6 +1,6 @@
-// Підключення функціоналу "Чертоги Фрілансера"
+// Connecting common functionality
 import { isMobile } from "./functions.js";
-// Підключення списку активних модулів
+// Connecting the list of active modules
 import { flsModules } from "./modules.js";
 
 
@@ -116,9 +116,12 @@ document.addEventListener('DOMContentLoaded', function () {
 	const uploadButtonPC = document.getElementById('upload-photos-button-pc');
 	const photoUploadFieldsPC = document.getElementById('photo-upload-fields-pc');
 
-	uploadButtonPC.addEventListener('click', function () {
-		photoUploadFieldsPC.style.display = 'block';
-	});
+	// ---> Check for existence:
+	if (uploadButtonPC) {
+		uploadButtonPC.addEventListener('click', function () {
+			photoUploadFieldsPC.style.display = 'block';
+		});
+	}
 
 
 
@@ -155,13 +158,16 @@ document.addEventListener('DOMContentLoaded', function () {
 	const submitButtonPC = document.getElementById('submit-pc');
 
 	// Add event listener to the submit button
-	submitButtonPC.addEventListener('click', function (event) {
-		// Check if any of the hideFields have the class 'hidden'
-		if (hideFields.classList.contains('hide')) {
-			event.preventDefault();
-			hideFields.classList.remove('hide');
-		}
-	});
+	// ---> Check for existence:
+	if (submitButtonPC) {
+		submitButtonPC.addEventListener('click', function (event) {
+			// Check if any of the hideFields have the class 'hidden'
+			if (hideFields.classList.contains('hide')) {
+				event.preventDefault();
+				hideFields.classList.remove('hide');
+			}
+		});
+	}
 
 
 	var setRatingPC = document.getElementById('set-rating-pc');
@@ -232,5 +238,58 @@ document.addEventListener('DOMContentLoaded', function () {
 			}
 		});
 	}
+
+
+	// A script for choosing no more than 3 checkboxes in a contact form
+	const container = document.querySelector('.contact-form-PC.max-3-checkboxes');
+
+	if (container) {
+		const checkboxes = container.querySelectorAll('.checkbox__input');
+		const maxChecked = 3;
+
+		if (checkboxes.length > 0) {
+			// Add a change processor for each checkbox
+			checkboxes.forEach(checkbox => {
+				checkbox.addEventListener('change', () => {
+					// We count the number of selected checkboxes
+					const checkedCount = container.querySelectorAll('.checkbox__input:checked').length;
+
+					// If exactly 3 checkboxes are selected, disable the unchecked ones
+					if (checkedCount >= maxChecked) {
+						checkboxes.forEach(cb => {
+							if (!cb.checked) {
+								cb.classList.add('disabled');
+								cb.disabled = true;
+
+								// Add the 'disabled' class to the next element (label)
+								const nextElement = cb.nextElementSibling;
+								if (nextElement) {
+									nextElement.classList.add('disabled');
+								}
+							}
+						});
+					} else {
+						// If less than 3 are selected, enable all checkboxes
+						checkboxes.forEach(cb => {
+							cb.classList.remove('disabled');
+							cb.disabled = false;
+
+							// Remove the 'disabled' class from the next element (label)
+							const nextElement = cb.nextElementSibling;
+							if (nextElement) {
+								nextElement.classList.remove('disabled');
+							}
+						});
+					}
+				});
+			});
+		}
+	}
+
+
+
+
+
+
 
 });
