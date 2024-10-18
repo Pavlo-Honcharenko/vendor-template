@@ -21,15 +21,15 @@
 								<form name="form-vendor" class="form-vendor newportfolio-form" method="POST" action="#">
 
 									<div class="contact-form__item">
-											<input id="userFirstName" name="userFirstName" type="text" autocomplete="off" data-validate="" data-error="This field is required." placeholder="Couple’s Name*" class="input">
+										<input id="userFirstName" name="userFirstName" type="text" autocomplete="off" data-validate="" data-error="This field is required." placeholder="Couple’s Name*" class="input">
 									</div>
 
 									<div class="contact-form__item">
-											<input id="userEmail" name="userEmail" type="email" data-validate="" data-error="This field is required. Please enter a valid email address." data-required="email" placeholder="Email*" class="input">
+										<input id="userEmail" name="userEmail" type="email" data-validate="" data-error="This field is required. Please enter a valid email address." data-required="email" placeholder="Email*" class="input">
 									</div>
 
 									<div class="contact-form__item">
-											<input id="userWeddingLocation" name="userWeddingLocation" type="text" placeholder="Wedding Location" class="input">
+										<input id="userWeddingLocation" name="userWeddingLocation" type="text" placeholder="Wedding Location" class="input">
 									</div>
 
 									<div class="contact-form__text">
@@ -135,7 +135,6 @@
 									<div id="best-of">Best of...</div>
 									<h1>Wedding Photographers in Austin, Texas</h1>
 
-
 									<div id="find-vendors-filter" class="find-vendors-filter">
 										<div class="find-vendors-filter__elements">
 											<div class="find-vendors-filter__element">
@@ -143,16 +142,18 @@
 													<span>Austin TX</span>
 													<img src="@img/icons/grey-select-arrow.svg" alt="">
 												</div>
+												<input type="hidden" name="find-vendors-filter-location" value="Austin TX">
 											</div>
 											<div class="find-vendors-filter__element">
 												<div id="find-vendors-filter-cathegory" class="find-vendors-filter__select">
 													<span>Photographers</span>
 													<img src="@img/icons/grey-select-arrow.svg" alt="">
 												</div>
+												<input type="hidden" name="find-vendors-filter-cathegory" value="Photographers">
 											</div>
 											<div class="find-vendors-filter__element">
 												<div class="find-vendors-button">
-													See Vendors
+													<span>See Vendors</span>
 												</div>
 											</div>
 										</div>
@@ -161,10 +162,107 @@
 											<div class="wrapper-position-absolute">
 												<div id="find-vendors-filter-wrapper" class="find-vendors-filter-wrapper">
 													<div id="find-vendors-filter-locations" class="find-vendors-filter-locations">
-														USA Europe Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero quod fugit magnam tempore eos quam?
+
+														<div id="find-vendors-filter-countries" class="find-vendors-filter-countries">
+															<!-- Slider wrapper -->
+															<div class="countries__slider swiper">
+																<!-- The moving part of the slider -->
+																<div class="countries__wrapper swiper-wrapper">
+																	<!-- Slide -->
+																	<div class="countries__slide swiper-slide swiper-slide-active">US</div>
+																	<!-- Slide -->
+																	<div class="countries__slide swiper-slide">Europe</div>
+																	<!-- Slide -->
+																	<div class="countries__slide swiper-slide">Canada</div>
+																	<!-- Slide -->
+																	<div class="countries__slide swiper-slide">Australia & South Pacific</div>
+																	<!-- Slide -->
+																	<div class="countries__slide swiper-slide">Asia</div>
+																	<!-- Slide -->
+																	<div class="countries__slide swiper-slide">Africa</div>
+																	<!-- Slide -->
+																	<div class="countries__slide swiper-slide">Americas</div>
+																</div>
+																<!-- If you need buttons for navigation (left/right) -->
+																<button type="button" class="swiper-countries-button-prev"></button>
+																<button type="button" class="swiper-countries-button-next"></button>
+															</div>
+														</div>
+
+														<div id="find-vendors-filter-popular" class="find-vendors-filter-popular">
+															<div class="title-orange-color">
+																Most Popular
+															</div>
+															<div class="most-popular-items">
+																<div class="city-name">New York City</div>
+																<div class="city-name">Los Angeles</div>
+																<div class="city-name">New Jersey</div>
+																<div class="city-name">Chicago</div>
+																<div class="city-name">Houston</div>
+																<div class="city-name">Miami</div>
+																<div class="city-name">San Francisco</div>
+																<div class="city-name">Arizona</div>
+															</div>
+														</div>
+
+														<div id="find-vendors-filter-settlements" class="find-vendors-filter-settlements">
+															
+															<div class="settlements-items">
+																<div class="settlements-col">
+																	<div class="title-orange-color">
+																		All Areas
+																	</div>
+																	<div class="region-title">Texas</div>
+																	<div class="city-name">Arlington</div>
+																	<div class="city-name">Austin</div>
+																	<div class="city-name">Dallas</div>
+																	<div class="city-name">El Paso</div>
+																	<div class="region-title">California</div>
+																	<div class="city-name">Los Angeles</div>
+																	<div class="city-name">San Francisco</div>
+																	<div class="city-name">San Diego</div>
+																	<div class="city-name">San Jose</div>
+																	<div class="city-name">Sacramento</div>
+																</div>
+
+																<div class="settlements-col">
+																	<div class="city-name">Long Beach</div>
+																	<div class="city-name">Anaheim</div>
+																	<div class="region-title">New York</div>
+																	<div class="city-name">New York City</div>
+																	<div class="city-name">Buffalo</div>
+																	<div class="city-name">Rochester</div>
+																	<div class="city-name">Yonkers</div>
+																	<div class="city-name">Syracuse</div>
+																	<div class="region-title">Florida</div>
+																	<div class="city-name">Miami</div>
+																	<div class="city-name">Orlando</div>
+																</div>
+
+																<div class="settlements-col">
+																	<div class="city-name">Jacksonville</div>
+																	<div class="city-name">Tallahassee</div>
+																	<div class="city-name">Fort Lauderdale</div>
+																	<div class="region-title">Illinois</div>
+																	<div class="city-name">Chicago</div>
+																	<div class="city-name">Aurora</div>
+																	<div class="city-name">Naperville</div>
+																	<div class="city-name">Joliet</div>
+																	<div class="city-name">Rockford</div>
+																	<div class="city-name">Springfield</div>
+																</div>
+
+															</div>
+														</div>
+														
 													</div>
 													<div id="find-vendors-filter-cathegories" class="find-vendors-filter-cathegories">
-														Planners Photographers Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus repellat animi, molestiae vel eveniet culpa consectetur officiis veritatis molestias eos saepe, veniam quas consequuntur?
+														<div class="filter-cathegory">Photographers</div>
+														<div class="filter-cathegory">Planners</div>
+														<div class="filter-cathegory">Videographers</div>
+														<div class="filter-cathegory">Florists</div>
+														<div class="filter-cathegory">Hair & Makeup</div>
+														<div class="filter-cathegory">Venues</div>
 													</div>
 												</div>
 											</div>
@@ -172,12 +270,93 @@
 										
 
 									</div><!-- end of find-vendors-filter -->
-
 								</div>
-
 							</div>
 
-							<div id="vendors">
+							<div id="featured-vendor" class="featured-vendor">
+								
+								<div class="featured-vendor__col-with-text">
+									<div class="featured-vendor__label">Featured Vendor</div>
+									<div class="most-reviewed">Most<br>Reviewed</div>
+									<h2 class="featured-vendor__title">MemoryBox<br>Photography</h2>
+									<div class="vendor__location">
+										<img src="@img/icons/decor-geo.svg" class="icon" alt="geo">
+										Based in Los Cabos and Tulum, Mexico 
+									</div>
+									<div class="featured-vendor__button">Discover Vendor ></div>
+								</div>
+								<div class="featured-vendor__col-with-images">
+
+									<!-- Slider wrapper -->
+									<div class="featured-vendor__slider swiper">
+										<!-- The moving part of the slider -->
+										<div class="featured-vendor__wrapper swiper-wrapper vendor-images-wrapper">
+											<!-- Slide -->
+											<div class="featured-vendor__slide swiper-slide">
+												<div class="img-wrapper">
+													<img src="@img/memorybox20.jpeg" alt="">
+												</div>
+											</div>
+											<!-- Slide -->
+											<div class="featured-vendor__slide swiper-slide">
+												<div class="img-wrapper">
+													<img src="@img/memorybox21.jpeg" alt="">
+												</div>
+											</div>
+											<!-- Slide -->
+											<div class="featured-vendor__slide swiper-slide">
+												<div class="img-wrapper">
+													<img src="@img/memorybox23.jpeg" alt="">
+												</div>
+											</div>
+											<!-- Slide -->
+											<div class="featured-vendor__slide swiper-slide">
+												<div class="img-wrapper">
+													<img src="@img/memorybox24.jpeg" alt="">
+												</div>
+											</div>
+											<!-- Slide -->
+											<div class="featured-vendor__slide swiper-slide">
+												<div class="img-wrapper">
+													<img src="@img/memorybox25.jpeg" alt="">
+												</div>
+											</div>
+											<!-- Slide -->
+											<div class="featured-vendor__slide swiper-slide">
+												<div class="img-wrapper">
+													<img src="@img/memorybox26.jpeg" alt="">
+												</div>
+											</div>
+											<!-- Slide -->
+											<div class="featured-vendor__slide swiper-slide">
+												<div class="img-wrapper">
+													<img src="@img/memorybox27.jpeg" alt="">
+												</div>
+											</div>
+										</div>
+										<!-- If you need buttons for navigation (left/right) -->
+										<button type="button" class="featured-vendor-button-prev"></button>
+										<button type="button" class="featured-vendor-button-next"></button>
+									</div>
+
+								</div>
+							</div>
+
+							<div class="vendor-overview">
+								<div class="vendor-overview__slogan">
+									<div class="vendor-overview__word-1">Vetted.</div>
+									<div class="vendor-overview__word-2">Verified.</div>
+									<div class="vendor-overview__word-3">Curated.</div>
+								</div>
+								<div class="vendor-overview__image">
+									<img src="@img/icons/decor-slogan.svg" alt="">
+								</div>
+								<div class="vendor-overview__text">
+									Finding the best wedding vendors shouldn’t be overwhelming. At Junebug, we hand-select a maximum of 20 vendors for each list through a rigorous vetting process. No long lists, just trusted, exceptional talent.
+								</div>
+							</div>
+
+							<!-- <div id="vendors">
 
 								<div class="vendor">
 									<div class="vendor-details-wrapper">
@@ -200,7 +379,9 @@
 									</div>
 								</div>
 
-							</div>
+							</div> -->
+
+							
 
 						</div>
 					</div>

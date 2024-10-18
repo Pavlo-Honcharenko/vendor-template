@@ -109,9 +109,12 @@ document.addEventListener('DOMContentLoaded', function () {
 	const uploadButtonPopup = document.getElementById('upload-photos-button-popup');
 	const photoUploadFieldsPopup = document.getElementById('photo-upload-fields-popup');
 
-	uploadButtonPopup.addEventListener('click', function () {
-		photoUploadFieldsPopup.style.display = 'block';
-	});
+	if (uploadButtonPopup) {
+		uploadButtonPopup.addEventListener('click', function () {
+			photoUploadFieldsPopup.style.display = 'block';
+		});
+	}
+
 
 	const uploadButtonPC = document.getElementById('upload-photos-button-pc');
 	const photoUploadFieldsPC = document.getElementById('photo-upload-fields-pc');
@@ -342,32 +345,108 @@ document.addEventListener('DOMContentLoaded', function () {
 	const categorySelect = document.querySelector('#find-vendors-filter-cathegory');
 	const locationDropdown = document.querySelector('#find-vendors-filter-locations');
 	const categoryDropdown = document.querySelector('#find-vendors-filter-cathegories');
+	const filterWrapper = document.querySelector('.find-vendors-filter-wrapper');
+	const slides = document.querySelectorAll(".countries__slide");
+
+	if (slides.length > 0) {
+		slides.forEach(function (slide) {
+			slide.addEventListener("click", function () {
+				// We remove the swiper-slide-activeclass from all slides
+				slides.forEach(function (s) {
+					s.classList.remove("swiper-slide-active");
+				});
+
+				// Add the swiper-slide-active class to the current slide
+				this.classList.add("swiper-slide-active");
+			});
+		});
+	}
+
+	// Insert the selected city in the Input:
+	document.addEventListener('click', function (event) {
+		// We check that the clicking element has a class "city-name"
+		if (event.target.closest('.city-name')) {
+			const cityName = event.target.textContent.trim();
+			const filterLocation = document.querySelector('#find-vendors-filter-location span');
+
+			if (filterLocation) {
+				filterLocation.textContent = cityName;
+			}
+
+			const hiddenInput = document.querySelector('input[name="find-vendors-filter-location"]');
+			if (hiddenInput) {
+				hiddenInput.value = cityName;
+			}
+		}
+
+		// We check that the clicking element has a class "filter-cathegory"
+		if (event.target.closest('.filter-cathegory')) {
+			const categoryName = event.target.textContent.trim();
+			const filterCategory = document.querySelector('#find-vendors-filter-cathegory span');
+
+			if (filterCategory) {
+				filterCategory.textContent = categoryName;
+			}
+
+			const hiddenInput = document.querySelector('input[name="find-vendors-filter-cathegory"]');
+			if (hiddenInput) {
+				hiddenInput.value = categoryName;
+			}
+		}
+	});
+
+
+
 
 	// Check if elements exist before using them
-	if (locationSelect && categorySelect && locationDropdown && categoryDropdown) {
+	if (locationSelect && categorySelect && locationDropdown && categoryDropdown && filterWrapper) {
 
-		locationSelect.addEventListener('click', function () {
-			console.log('click locationSelect');
+		locationSelect.addEventListener('click', function (event) {
 			// Add _active and _visible class for location
-			locationSelect.classList.add('_active');
-			locationDropdown.classList.add('_visible');
+			locationSelect.classList.toggle('_active');
+			locationDropdown.classList.toggle('_visible');
 
 			// Remove classes for category
 			categorySelect.classList.remove('_active');
 			categoryDropdown.classList.remove('_visible');
+
+			// Prevent event from bubbling up to document
+			event.stopPropagation();
 		});
 
-		categorySelect.addEventListener('click', function () {
-			console.log('click categorySelect');
+		categorySelect.addEventListener('click', function (event) {
 			// Add _active and _visible class for category
-			categorySelect.classList.add('_active');
-			categoryDropdown.classList.add('_visible');
+			categorySelect.classList.toggle('_active');
+			categoryDropdown.classList.toggle('_visible');
 
 			// Remove classes for location
 			locationSelect.classList.remove('_active');
 			locationDropdown.classList.remove('_visible');
+
+			// Prevent event from bubbling up to document
+			event.stopPropagation();
+		});
+
+		// Add event listener to the document to close dropdowns when clicking outside
+		document.addEventListener('click', function (event) {
+			// Check if the click is outside the filterWrapper
+			if (!filterWrapper.contains(event.target)) {
+				// Remove _visible class from both dropdowns
+				locationDropdown.classList.remove('_visible');
+				categoryDropdown.classList.remove('_visible');
+
+				// Optionally remove _active class as well
+				locationSelect.classList.remove('_active');
+				categorySelect.classList.remove('_active');
+			}
+
 		});
 	}
+
+
+
+
+
 
 
 

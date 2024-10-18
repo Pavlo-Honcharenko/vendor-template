@@ -144,7 +144,7 @@ function initSliders() {
 				el: '.swiper-pagination',
 				clickable: true,
 			},
-*/
+			*/
 
 			// Скроллбар
 			/*
@@ -223,7 +223,7 @@ function initSliders() {
 				el: '.swiper-pagination',
 				clickable: true,
 			},
-*/
+			*/
 
 			// Скроллбар
 			/*
@@ -231,7 +231,7 @@ function initSliders() {
 				el: '.swiper-scrollbar',
 				draggable: true,
 			},
-*/
+			*/
 
 			// Кнопки "вліво/вправо"
 			navigation: {
@@ -244,6 +244,66 @@ function initSliders() {
 
 			}
 		});
+
+
+
+		// Створюємо слайдер
+		if (window.innerWidth < 650) {
+			new Swiper('.countries__slider', { // Вказуємо склас потрібного слайдера
+				// Підключаємо модулі слайдера
+				// для конкретного випадку
+				modules: [Navigation],
+				observer: true,
+				observeParents: true,
+				slidesPerView: 'auto',
+				spaceBetween: 10,
+				// autoHeight: true,
+				speed: 300,
+
+				//touchRatio: 0,
+				//simulateTouch: false,
+				loop: false,
+
+				// Кнопки "вліво/вправо"
+				navigation: {
+					prevEl: '.swiper-countries-button-prev',
+					nextEl: '.swiper-countries-button-next',
+				},
+
+				// Події
+				on: {
+
+				}
+			});
+		}
+
+		new Swiper('.featured-vendor__slider', {
+			// Підключаємо модулі слайдера
+			// для конкретного випадку
+			modules: [Navigation],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 'auto',
+			spaceBetween: 0,
+			// autoHeight: true,
+			speed: 300,
+
+			//touchRatio: 0,
+			//simulateTouch: false,
+			loop: false,
+
+			// Кнопки "вліво/вправо"
+			navigation: {
+				prevEl: '.featured-vendor-button-prev',
+				nextEl: '.featured-vendor-button-next',
+			},
+
+			// Події
+			on: {
+
+			}
+		});
+
 
 	}
 }
