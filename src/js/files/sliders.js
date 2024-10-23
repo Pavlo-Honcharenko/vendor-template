@@ -305,6 +305,63 @@ function initSliders() {
 		});
 
 
+		new Swiper('.vendor__slider', {
+			// Підключаємо модулі слайдера
+			// для конкретного випадку
+			modules: [Navigation],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 'auto',
+			spaceBetween: 10,
+			// autoHeight: true,
+			speed: 300,
+
+			//touchRatio: 0,
+			//simulateTouch: false,
+			loop: false,
+
+			// Кнопки "вліво/вправо"
+			navigation: {
+				prevEl: '.vendor-button-prev',
+				nextEl: '.vendor-button-next',
+			},
+
+			// Події
+			on: {
+
+			}
+		});
+
+
+		new Swiper('.real-reviews__slider', {
+			// Підключаємо модулі слайдера
+			// для конкретного випадку
+			modules: [Navigation],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 1,
+			spaceBetween: 40,
+			// autoHeight: true,
+			speed: 300,
+
+			//touchRatio: 0,
+			//simulateTouch: false,
+			loop: true,
+
+			// Кнопки "вліво/вправо"
+			navigation: {
+				prevEl: '.real-review-button-prev',
+				nextEl: '.real-review-button-next',
+			},
+
+			// Події
+			on: {
+
+			}
+		});
+
+
+
 	}
 }
 // Скролл на базі слайдера (за класом swiper scroll для оболонки слайдера)
