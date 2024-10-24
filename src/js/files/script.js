@@ -457,3 +457,43 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 });
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+	const countrySlides = document.querySelectorAll(".countries__slide");
+	const mostPopularItems = document.querySelectorAll(".most-popular-items");
+	const settlementsItems = document.querySelectorAll(".settlements-items");
+
+	if (countrySlides.length > 0 && mostPopularItems.length > 0 && settlementsItems.length > 0) {
+		countrySlides.forEach(function (slide) {
+			slide.addEventListener("click", function () {
+				const textContent = slide.textContent.trim().toLowerCase();
+				const firstWord = textContent.split(/\s+/)[0];  // We take the first word
+
+				mostPopularItems.forEach(function (item) {
+					item.classList.remove("_show");
+				});
+				settlementsItems.forEach(function (item) {
+					item.classList.remove("_show");
+				});
+
+				// Add the class ._show to the element with the class .most-popular-items--{firstWord}
+				const targetItem = document.querySelector(`.most-popular-items--${firstWord}`);
+				if (targetItem) {
+					targetItem.classList.add("_show");
+				}
+				// Add the class ._show to the element with the class .settlements-items--{firstWord}
+				const targetSettlementsItem = document.querySelector(`.settlements-items--${firstWord}`);
+				if (targetSettlementsItem) {
+					console.log('++targetSettlementsItem');
+					console.log('targetSettlementsItem');
+					targetSettlementsItem.classList.add("_show");
+				}
+			});
+		});
+	}
+});
+

@@ -5019,6 +5019,7 @@ body {
 			align-items: center;
 			border: 1px solid #c4950c;
 			background-color: #c4950c;
+			cursor: pointer;
 		}
 	}
 
@@ -5035,4 +5036,137 @@ body {
 }
 
 
-	
+
+//===========================================Additional Vendors============================================================
+
+.additional-vendors {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.additional-vendor {
+	flex: 0 0 calc(33.333% - 12px);
+	border: 1px solid #bababa;
+	padding: 55px 0 50px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: column;
+	margin-bottom: 15px;
+
+	@media (max-width:$tablet){
+		flex: 0 0 calc(50% - 7px);
+		padding: 35px 0 0;
+	}
+
+	@media (max-width:$mobile){
+		padding: 25px 0 0; 
+	}
+
+	@media (max-width:$mobileSmall){
+		 padding: 20px 0 0; 
+	}
+
+	// .additional-vendor__image
+	&__image {
+		width: 63%;
+		aspect-ratio: 1;
+		position: relative;
+		margin-bottom: 30px;
+
+		@media (max-width: 1250px){
+			width: 72%;
+		}
+
+		@media (max-width:$tablet){
+			width: 78%;
+			margin-bottom: 20px;
+		}
+
+		@media (max-width:$mobile){
+			width: 84%;
+		}
+		@media (max-width:$mobileSmall){
+			width: 92%; 
+		}
+
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-position: center;
+			object-fit: cover;
+		}
+	}
+	// .additional-vendor__title
+	&__title {
+		font-weight: 400;
+		font-size: 38px;
+		color: #000;
+		margin-bottom: 25px;
+		line-height: 110%;
+		text-align: center;
+		padding: 0 6px;
+
+		@media (max-width: 1400px){
+			font-size: 33px;
+		}
+
+		@media (max-width: 1250px){
+			font-size: 29px;
+			margin-bottom: 20px;
+		}
+		@media (max-width:$tablet){
+			font-size: 25px;
+			margin-bottom: 15px;
+		}
+		@media (max-width: 767px){
+			font-size: 23px;
+		}
+		@media (max-width:$mobile){
+			font-size: 20px; 
+		}
+		@media (max-width:$mobileSmall){
+			font-size: 18px; 
+		}
+	}
+	// .additional-vendor__button
+	&__button {
+		width: 131px;
+		height: 30px;
+		border: 1px solid #c4950c;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-weight: 400 !important;
+		font-size: 11px;
+		color: #000 !important;
+		margin-top: auto;
+		cursor: pointer;
+
+		@media (max-width:$tablet){
+			width: 100%;
+			margin: auto 0 -1px;
+		}
+
+		@media (max-width:$mobileSmall){
+			height: 24px; 
+		}
+	}
+}
+
+
+//==========================================Find Vendors Form=============================================================
+.most-popular-items, #directory-listings .settlements-items {
+	display: none;
+}
+.most-popular-items._show {
+	display: block;
+}
+
+#directory-listings .settlements-items._show {
+   display: flex;
+}
