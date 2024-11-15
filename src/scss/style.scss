@@ -4275,7 +4275,7 @@ body {
 
 						.vendor-explore-button {
 							padding-left: 0 !important;
-							
+
 							@media (max-width:$mobile){
 								bottom: 26px;
 							}
@@ -5630,12 +5630,389 @@ body {
 	cursor: pointer;
 }
 
+.promise-wrapper-white {
+	padding: 60px 0;
+	border-left: 1px solid #c99a0c00;
+	border-right: 1px solid #c99a0c00;
+	border-bottom: 1px solid #c99a0c00;
+	margin: 40px -15px 0;
+	width: calc(100% + 30px);
+	position: relative;
+
+	@media (max-width: 1400px){
+		border-left: 1px solid #c4950c;
+		border-right: 1px solid #c4950c;
+		border-bottom: 1px solid #c4950c;
+	}
+
+	@media (max-width:$tablet){
+		margin: 40px -15px 0;
+		width: calc(100% + 40px);
+		padding: 60px 0 50px;
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: -40px;
+		left: 0;
+		right: 0;
+		width: 100%;
+		height: 80px;
+		background: url('../img/decor-promise.svg') calc(50%) center/cover no-repeat;
+	}
+
+	.promise__title, .promise__text, .promise-items {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+}
+
+.font-weight-400 {
+	font-weight: 400;
+}
+
+.more {
+	// .more__subtitle
+	&__subtitle {
+		font-weight: 400;
+		font-size: 22px;
+		padding-top: 40px;
+		padding-bottom: 25px;
+		text-align: center;
+		line-height: 115%;
+	}
+	// .more__description
+	&__description {
+		// font-weight: 400;
+		font-size: 16px;
+		max-width: 940px;
+		line-height: 180%;
+		margin: 0 auto;
+		text-align: center;
+		position: relative;
+	}
+	// .more__description-content
+	&__description-content {
+		
+	}
+	// .more__button
+	&__button {
+		background: linear-gradient(to right, rgba(244, 243, 242, 0) 0%, #fff 16%, #fff 100%);
+		padding: 0 10px 0 15px;
+		position: absolute;
+		bottom: -6px;
+		right: 0;
+		z-index: 2;
+		cursor: pointer;
+	}
+	._showmore-active [data-showmore-button] span::after {
+		display: none;
+	}
+}
+
+.real-weddings {
+	padding: 80px 0 0;
+
+	@media (max-width:$tablet){
+		padding: 60px 0 50px;
+	}
+		// .real-weddings__title
+		&__title {
+			font-family: "Playfair Display";
+			font-style: italic;
+			font-weight: 400;
+			line-height: 120%;
+			text-align: center;
+			font-size: 40px;
+			margin-bottom: 5px;
+		}
+		// .real-weddings__location
+		&__location {
+			font-size: 22px;
+			text-align: center;
+			margin-bottom: 30px;
+		}
+		// .real-weddings__items
+		&__items {
+			display: flex;
+			margin: 0 -24px;
+			width: calc(100% + 48px);
+
+			@media (max-width: 1400px){
+				flex-wrap: wrap;
+				justify-content: center;
+				align-items: center;
+			}
+		}
+}
+.real-wedding {
+	flex: 0 1 33.333%;
+	display: flex;
+	flex-direction: column;
+	padding: 24px;
+
+	@media (max-width: 1400px){
+		flex: 0 1 48%;
+	}
+
+	@media (max-width:$mobile){
+		flex: 1 1 100%; 
+	}
+
+	// .real-wedding__photo
+	&__photo {
+		width: 100%;
+		aspect-ratio: 1.5;
+		overflow: hidden;
+		margin-bottom: 25px;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
+		}
+	}
+	// .real-wedding__title
+	&__title {
+		flex-wrap: wrap;
+		font-size: 26px;
+		font-weight: 500;
+		line-height: 130%;
+		padding-bottom: 13px;
+	}
+	// .real-wedding__date
+	&__date {
+		font-size: 17px;
+		line-height: 130%;
+		margin-bottom: 28px;
+	}
+	// .real-wedding__description
+	&__description {
+		font-size: 17px;
+		line-height: 130%;
+		position: relative;
+		margin-bottom: 35px;
+	}
+	.real-wedding__button {
+		margin: auto auto 40px;
+		font-weight: 400;
+		font-size: 14px;
+		color: #1E1E1E;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 35px;
+		width: 185px;
+		padding: 0;
+		border: 1px solid #1E1E1E;
+		cursor: pointer;
+	}
+	.more {
+		// .more__description-content
+		&__description-content {}
+		// .more__button
+		&__button {
+			background: linear-gradient(to right, rgba(244, 243, 242, 0) 0%, #fff 16%, #fff 100%);
+			padding: 0 10px 0 15px;
+			position: absolute;
+			bottom: -5px;
+			right: 0;
+			z-index: 2;
+			cursor: pointer;
+		}
+	}
+	._showmore-active [data-showmore-button] span:last-child {
+		display: none !important;
+	}
+}
+.qa-hotlist {
+	.qa__col-left {
+		align-items: flex-start;
+		justify-content: flex-start;
+		padding: 0;
+
+		.qa__description {
+			font-size: 30px;
+			line-height: 115%;
+			text-align: left;
+			display: flex;
+		}
+	}
+	.spollers__title {
+		padding: 0.6rem 2.8125rem 0.6rem 1.4rem;
+		font-size: 22px;
+
+		@media (max-width:$mobile){
+			padding: 0.6rem 2.8125rem 0.6rem 0;
+			font-size: 19px;
+			border-left: transparent;
+			border-right: transparent;
+			border-bottom: transparent;
+		}
+	}
+	.spollers__body {
+		font-size: 17px;
+
+		@media (max-width:$mobile){
+			padding: 0 0 0.9375rem; 
+		}
+	}
+	.spollers__item:first-child .spollers__title {
+		@media (max-width:$mobile){
+			border-top: transparent;
+		}
+	}
+	
+}
+
+.discover {
+	margin-top: 60px;
+	padding: 75px 14% 75px 14%;
+	border: 2px solid #C99A0C;
+	position: relative;
+
+	@media (max-width:$mobile){
+		padding: 60px 8%;
+	}
+
+	.decor-top {
+		position: absolute;
+		left: 14%;
+		top: -33px;
+
+		@media (max-width:$mobile){
+			 left: calc(50% - 50px); 
+		}
+	}
+
+	// .discover__text-1
+	&__text-1 {
+		font-size: 25px;
+		padding-bottom: 60px;
+		line-height: 115%;
+
+		@media (max-width:$mobile){
+			text-align: center; 
+			font-size: 20px;
+			padding-bottom: 35px;
+		}
+	}
+	// .discover__title
+	&__title {
+		font-size: 50px;
+		padding-bottom: 30px;
+		line-height: 115%;
+		@media (max-width:$mobile){
+			 text-align: center;
+			 font-size: 35px; 
+		}
+	}
+	// .discover__title-line-1
+	&__title-line-1 {
+		font-size: 50px;
+		padding-bottom: 17px;
+		line-height: 115%;
+
+		@media (max-width:$mobile){
+			 text-align: center;
+			 font-size: 35px; 
+			 padding-bottom: 5px;
+		}
+	}
+	// .discover__title-line-2
+	&__title-line-2 {
+		font-family: "Playfair Display";
+		font-style: italic;
+		line-height: 115%;
+
+		@media (max-width:$mobile){
+			text-align: center; 
+		}
+		
+		span {
+			font-size: 35px;
+
+			@media (max-width:$mobile){
+				 font-size: 30px; 
+			}
+		}
+	}
+	// .discover__text
+	&__text {
+		font-size: 18px;
+		padding-bottom: 54px;
+		line-height: 130%;
+
+		@media (max-width:$mobile){
+			 text-align: center; 
+			 padding-bottom: 40px;
+		}
+	}
+	// .discover__button
+	&__button {
+		font-weight: 400;
+		font-size: 14px;
+		color: #1E1E1E;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 35px;
+		width: 185px;
+		border: 1px solid #1E1E1E;
+		cursor: pointer;
+
+		@media (max-width:$mobile){
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+}
+
+.mb-50 {
+	margin-bottom: 50px;
+}
+.mt-30 {
+	margin-top: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // TEMPORARY STYLES:
-.col-content .breadcrumbs {
-    margin: 25px 0 20px 0;
-}
-#directory-listings #col-contact.col-contact-motd-spacer {
-    top: 30px;
-}
+// .col-content .breadcrumbs {
+//     margin: 25px 0 20px 0;
+// }
+// #directory-listings #col-contact.col-contact-motd-spacer {
+//     top: 30px;
+// }
