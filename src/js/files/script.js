@@ -348,16 +348,29 @@ document.addEventListener('DOMContentLoaded', function () {
 	const filterWrapper = document.querySelector('.find-vendors-filter-wrapper');
 	const slides = document.querySelectorAll(".countries__slide");
 
+	// We make a slide (the country's choice button) active by click on this slide:
 	if (slides.length > 0) {
 		slides.forEach(function (slide) {
 			slide.addEventListener("click", function () {
-				// We remove the swiper-slide-activeclass from all slides
+				// Remove the classes 'swiper-slide-active', 'swiper-slide-prev', and 'swiper-slide-next' from all slides
 				slides.forEach(function (s) {
-					s.classList.remove("swiper-slide-active");
+					s.classList.remove("swiper-slide-active", "swiper-slide-prev", "swiper-slide-next");
 				});
 
-				// Add the swiper-slide-active class to the current slide
+				// Add the 'swiper-slide-active' class to the current slide
 				this.classList.add("swiper-slide-active");
+
+				// Add 'swiper-slide-prev' class to the previous slide, if it exists
+				const prevSlide = this.previousElementSibling;
+				if (prevSlide) {
+					prevSlide.classList.add("swiper-slide-prev");
+				}
+
+				// Add 'swiper-slide-next' class to the next slide, if it exists
+				const nextSlide = this.nextElementSibling;
+				if (nextSlide) {
+					nextSlide.classList.add("swiper-slide-next");
+				}
 			});
 		});
 	}
@@ -377,17 +390,36 @@ document.addEventListener('DOMContentLoaded', function () {
 			if (hiddenInput) {
 				hiddenInput.value = cityName;
 			}
+
+			// Remove the 'city-name-active' class from all elements with the class 'city-name'
+			document.querySelectorAll('.city-name').forEach(element => {
+				element.classList.remove('city-name-active');
+			});
+			// Add the 'city-name-active' class to the clicked element
+			const clickedElement = event.target.closest('.city-name');
+			clickedElement.classList.add('city-name-active');
 		}
 
 		// We check that the clicking element has a class "filter-cathegory"
 		if (event.target.closest('.filter-cathegory')) {
-			const categoryName = event.target.textContent.trim();
+			// Remove the 'filter-cathegory-active' class from all elements with the class 'filter-cathegory'
+			document.querySelectorAll('.filter-cathegory').forEach(element => {
+				element.classList.remove('filter-cathegory-active');
+			});
+
+			// Add the 'filter-cathegory-active' class to the clicked element
+			const clickedElement = event.target.closest('.filter-cathegory');
+			clickedElement.classList.add('filter-cathegory-active');
+
+			const categoryName = clickedElement.textContent.trim();
 			const filterCategory = document.querySelector('#find-vendors-filter-cathegory span');
 
+			// Update the text content of the filter category display
 			if (filterCategory) {
 				filterCategory.textContent = categoryName;
 			}
 
+			// Update the hidden input value with the selected category
 			const hiddenInput = document.querySelector('input[name="find-vendors-filter-cathegory"]');
 			if (hiddenInput) {
 				hiddenInput.value = categoryName;
@@ -443,57 +475,84 @@ document.addEventListener('DOMContentLoaded', function () {
 		});
 	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 });
 
 
 
 
-
+// Show the content for a selected country in the filter to search for vendors:
 document.addEventListener("DOMContentLoaded", function () {
 	const countrySlides = document.querySelectorAll(".countries__slide");
 	const mostPopularItems = document.querySelectorAll(".most-popular-items");
 	const settlementsItems = document.querySelectorAll(".settlements-items");
 
+	// Function for show the content for a selected country:
+	function showTheCountrysContent(slide) {
+		if (slide) {
+			const textContent = slide.textContent.trim().toLowerCase();
+			const firstWord = textContent.split(/\s+/)[0];  // We take the first word
+
+			mostPopularItems.forEach(function (item) {
+				item.classList.remove("_show");
+			});
+			settlementsItems.forEach(function (item) {
+				item.classList.remove("_show");
+			});
+
+			// Add the class ._show to the element with the class .most-popular-items--{firstWord}
+			const targetItem = document.querySelector(`.most-popular-items--${firstWord}`);
+			if (targetItem) {
+				targetItem.classList.add("_show");
+			}
+			// Add the class ._show to the element with the class .settlements-items--{firstWord}
+			const targetSettlementsItem = document.querySelector(`.settlements-items--${firstWord}`);
+			if (targetSettlementsItem) {
+				targetSettlementsItem.classList.add("_show");
+			}
+		}
+	}
+
+
 	if (countrySlides.length > 0 && mostPopularItems.length > 0 && settlementsItems.length > 0) {
+
 		countrySlides.forEach(function (slide) {
 			slide.addEventListener("click", function () {
-				const textContent = slide.textContent.trim().toLowerCase();
-				const firstWord = textContent.split(/\s+/)[0];  // We take the first word
-
-				mostPopularItems.forEach(function (item) {
-					item.classList.remove("_show");
-				});
-				settlementsItems.forEach(function (item) {
-					item.classList.remove("_show");
-				});
-
-				// Add the class ._show to the element with the class .most-popular-items--{firstWord}
-				const targetItem = document.querySelector(`.most-popular-items--${firstWord}`);
-				if (targetItem) {
-					targetItem.classList.add("_show");
-				}
-				// Add the class ._show to the element with the class .settlements-items--{firstWord}
-				const targetSettlementsItem = document.querySelector(`.settlements-items--${firstWord}`);
-				if (targetSettlementsItem) {
-					console.log('++targetSettlementsItem');
-					console.log('targetSettlementsItem');
-					targetSettlementsItem.classList.add("_show");
-				}
+				showTheCountrysContent(slide);
 			});
 		});
+
+		// Find elements with classes 'swiper-countries-button-prev' and 'swiper-countries-button-next'
+		const prevButton = document.querySelector('.swiper-countries-button-prev');
+		const nextButton = document.querySelector('.swiper-countries-button-next');
+
+		// Function for searching for an active slide
+		function findActiveSlide() {
+			setTimeout(() => {
+				const activeSlide = document.querySelector('.countries__slide.swiper-slide.swiper-slide-active');
+				if (activeSlide) {
+					showTheCountrysContent(activeSlide);
+				}
+			}, 150); // Delay of 150 milliseconds to update the slide state
+		}
+
+		if (prevButton) {
+			prevButton.addEventListener('click', () => {
+				// Check if the class is added 'swiper-button-disabled'
+				if (!prevButton.classList.contains('swiper-button-disabled')) {
+					findActiveSlide();
+				}
+			});
+		}
+
+		if (nextButton) {
+			nextButton.addEventListener('click', () => {
+				// Check if the class is added 'swiper-button-disabled'
+				if (!nextButton.classList.contains('swiper-button-disabled')) {
+					findActiveSlide();
+				}
+			});
+		}
+
 	}
 });
 

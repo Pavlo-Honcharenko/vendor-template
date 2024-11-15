@@ -248,7 +248,7 @@ function initSliders() {
 
 
 		// Створюємо слайдер
-		if (window.innerWidth < 650) {
+		if (window.innerWidth < 1000) {
 			new Swiper('.countries__slider', { // Вказуємо склас потрібного слайдера
 				// Підключаємо модулі слайдера
 				// для конкретного випадку
@@ -258,7 +258,7 @@ function initSliders() {
 				slidesPerView: 'auto',
 				spaceBetween: 10,
 				// autoHeight: true,
-				speed: 300,
+				speed: 800,
 
 				//touchRatio: 0,
 				//simulateTouch: false,
@@ -286,7 +286,7 @@ function initSliders() {
 			slidesPerView: 'auto',
 			spaceBetween: 0,
 			// autoHeight: true,
-			speed: 300,
+			speed: 800,
 
 			//touchRatio: 0,
 			//simulateTouch: false,
@@ -314,7 +314,7 @@ function initSliders() {
 			slidesPerView: 'auto',
 			spaceBetween: 10,
 			// autoHeight: true,
-			speed: 300,
+			speed: 800,
 
 			//touchRatio: 0,
 			//simulateTouch: false,
@@ -342,7 +342,7 @@ function initSliders() {
 			slidesPerView: 1,
 			spaceBetween: 40,
 			// autoHeight: true,
-			speed: 300,
+			speed: 800,
 
 			//touchRatio: 0,
 			//simulateTouch: false,

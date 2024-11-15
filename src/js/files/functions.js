@@ -537,7 +537,7 @@ export function showMore() {
 					const showMoreButton = targetEvent.closest('[data-showmore-button]');
 					const showMoreBlock = showMoreButton.closest('[data-showmore]');
 					const showMoreContent = showMoreBlock.querySelector('[data-showmore-content]');
-					const showMoreSpeed = showMoreBlock.dataset.showmoreButton ? showMoreBlock.dataset.showmoreButton : '500';
+					const showMoreSpeed = showMoreBlock.dataset.showmoreButton ? showMoreBlock.dataset.showmoreButton : '900';
 					const hiddenHeight = getHeight(showMoreBlock, showMoreContent);
 					if (!showMoreContent.classList.contains('_slide')) {
 						showMoreBlock.classList.contains('_showmore-active') ? _slideUp(showMoreContent, showMoreSpeed, hiddenHeight) : _slideDown(showMoreContent, showMoreSpeed, hiddenHeight);
